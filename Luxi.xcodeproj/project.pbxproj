@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C70911CF181EE52900F37153 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C70911CE181EE52900F37153 /* MBProgressHUD.m */; };
+		C7160E5E180391E4007614EE /* LuxiDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = C7160E5D180391E4007614EE /* LuxiDetector.m */; };
+		C71CA47C1820C95D009F4297 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C71CA47B1820C95D009F4297 /* SwitchCell.m */; };
+		C71CA47E1820C982009F4297 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71CA47D1820C982009F4297 /* SwitchCell.xib */; };
+		C71F2FB8193EDF3600B1CEE9 /* Storyboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */; };
+		C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard */; };
+		C73F93FA1806439C00EE1016 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F93F91806439C00EE1016 /* SettingsViewController.m */; };
+		C73F93FD180666CC00EE1016 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F93FC180666CC00EE1016 /* Settings.m */; };
+		C73F940A18162EAD00EE1016 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F940918162EAD00EE1016 /* UIDevice-Hardware.m */; };
+		C772372317F0F3AD00003658 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C772372217F0F3AD00003658 /* Images.xcassets */; };
+		C772372917F66CED00003658 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C772372817F66CED00003658 /* MainViewController.m */; };
+		C77B002118583AA7002733FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4280B178B7C3A00CB3537 /* CoreGraphics.framework */; };
+		C77B006918583B32002733FB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC829FCA178F9F2B00F3655E /* ImageIO.framework */; };
+		C77B006A18583B6C002733FB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4282E178B9DBE00CB3537 /* CoreMedia.framework */; };
+		C7B56712183E861B00631949 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B56711183E861B00631949 /* CameraView.m */; };
+		C7BF6AEE1963CE9100E4E425 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BF6AED1963CE9100E4E425 /* OnboardingViewController.m */; };
+		CC17EC0317B2FBE100C779F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC17EC0217B2FBE100C779F0 /* SystemConfiguration.framework */; };
+		CC17EC0617B2FFA700C779F0 /* WebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC17EC0517B2FFA700C779F0 /* WebBrowserViewController.m */; };
+		CCE42808178B7C3A00CB3537 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE42807178B7C3A00CB3537 /* UIKit.framework */; };
+		CCE4280A178B7C3A00CB3537 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE42809178B7C3A00CB3537 /* Foundation.framework */; };
+		CCE42812178B7C3A00CB3537 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCE42810178B7C3A00CB3537 /* InfoPlist.strings */; };
+		CCE42814178B7C3A00CB3537 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42813178B7C3A00CB3537 /* main.m */; };
+		CCE42818178B7C3A00CB3537 /* LuxiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42817178B7C3A00CB3537 /* LuxiAppDelegate.m */; };
+		CCE4282B178B9CF800CB3537 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4282A178B9CF800CB3537 /* AVFoundation.framework */; };
+		CCE4282D178B9DB800CB3537 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4282C178B9DB800CB3537 /* CoreVideo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C70911CD181EE52900F37153 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C70911CE181EE52900F37153 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		C7160E5C180391E4007614EE /* LuxiDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuxiDetector.h; sourceTree = "<group>"; };
+		C7160E5D180391E4007614EE /* LuxiDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuxiDetector.m; sourceTree = "<group>"; };
+		C71CA47A1820C95D009F4297 /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
+		C71CA47B1820C95D009F4297 /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
+		C71CA47D1820C982009F4297 /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPad.storyboard; sourceTree = "<group>"; };
+		C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C73F93F81806439C00EE1016 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		C73F93F91806439C00EE1016 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		C73F93FB180666CC00EE1016 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		C73F93FC180666CC00EE1016 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
+		C73F940818162EAD00EE1016 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
+		C73F940918162EAD00EE1016 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		C772372217F0F3AD00003658 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C772372417F124C000003658 /* Luxi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Luxi.entitlements; sourceTree = "<group>"; };
+		C772372717F66CED00003658 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		C772372817F66CED00003658 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C7B56710183E861B00631949 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		C7B56711183E861B00631949 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
+		C7BF6AEC1963CE9100E4E425 /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
+		C7BF6AED1963CE9100E4E425 /* OnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardingViewController.m; sourceTree = "<group>"; };
+		CC17EC0217B2FBE100C779F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CC17EC0417B2FFA700C779F0 /* WebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowserViewController.h; sourceTree = "<group>"; };
+		CC17EC0517B2FFA700C779F0 /* WebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowserViewController.m; sourceTree = "<group>"; };
+		CC829FC8178F9E2600F3655E /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		CC829FCA178F9F2B00F3655E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		CCE42804178B7C3A00CB3537 /* Luxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE42807178B7C3A00CB3537 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CCE42809178B7C3A00CB3537 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CCE4280B178B7C3A00CB3537 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CCE4280F178B7C3A00CB3537 /* Luxi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Luxi-Info.plist"; sourceTree = "<group>"; };
+		CCE42811178B7C3A00CB3537 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CCE42813178B7C3A00CB3537 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CCE42815178B7C3A00CB3537 /* Luxi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Luxi-Prefix.pch"; sourceTree = "<group>"; };
+		CCE42816178B7C3A00CB3537 /* LuxiAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuxiAppDelegate.h; sourceTree = "<group>"; };
+		CCE42817178B7C3A00CB3537 /* LuxiAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuxiAppDelegate.m; sourceTree = "<group>"; };
+		CCE4282A178B9CF800CB3537 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CCE4282C178B9DB800CB3537 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		CCE4282E178B9DBE00CB3537 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCE42801178B7C3A00CB3537 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C77B006A18583B6C002733FB /* CoreMedia.framework in Frameworks */,
+				C77B006918583B32002733FB /* ImageIO.framework in Frameworks */,
+				C77B002118583AA7002733FB /* CoreGraphics.framework in Frameworks */,
+				CC17EC0317B2FBE100C779F0 /* SystemConfiguration.framework in Frameworks */,
+				CCE4282D178B9DB800CB3537 /* CoreVideo.framework in Frameworks */,
+				CCE4282B178B9CF800CB3537 /* AVFoundation.framework in Frameworks */,
+				CCE42808178B7C3A00CB3537 /* UIKit.framework in Frameworks */,
+				CCE4280A178B7C3A00CB3537 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C70911CC181EE52900F37153 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C70911CD181EE52900F37153 /* MBProgressHUD.h */,
+				C70911CE181EE52900F37153 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		C70911D1181F484900F37153 /* UIDevice-Hardware */ = {
+			isa = PBXGroup;
+			children = (
+				C73F940818162EAD00EE1016 /* UIDevice-Hardware.h */,
+				C73F940918162EAD00EE1016 /* UIDevice-Hardware.m */,
+			);
+			name = "UIDevice-Hardware";
+			sourceTree = "<group>";
+		};
+		C71CA47F1820CCE3009F4297 /* SwitchCell */ = {
+			isa = PBXGroup;
+			children = (
+				C71CA47A1820C95D009F4297 /* SwitchCell.h */,
+				C71CA47B1820C95D009F4297 /* SwitchCell.m */,
+				C71CA47D1820C982009F4297 /* SwitchCell.xib */,
+			);
+			name = SwitchCell;
+			sourceTree = "<group>";
+		};
+		C74B3D56193BF42300D87AAD /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		CCE427FB178B7C3A00CB3537 = {
+			isa = PBXGroup;
+			children = (
+				CCE4280D178B7C3A00CB3537 /* Luxi */,
+				CCE42806178B7C3A00CB3537 /* Frameworks */,
+				CCE42805178B7C3A00CB3537 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CCE42805178B7C3A00CB3537 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42804178B7C3A00CB3537 /* Luxi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCE42806178B7C3A00CB3537 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC17EC0217B2FBE100C779F0 /* SystemConfiguration.framework */,
+				CC829FCA178F9F2B00F3655E /* ImageIO.framework */,
+				CC829FC8178F9E2600F3655E /* CoreImage.framework */,
+				CCE4282E178B9DBE00CB3537 /* CoreMedia.framework */,
+				CCE4282C178B9DB800CB3537 /* CoreVideo.framework */,
+				CCE4282A178B9CF800CB3537 /* AVFoundation.framework */,
+				CCE42807178B7C3A00CB3537 /* UIKit.framework */,
+				CCE42809178B7C3A00CB3537 /* Foundation.framework */,
+				CCE4280B178B7C3A00CB3537 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CCE4280D178B7C3A00CB3537 /* Luxi */ = {
+			isa = PBXGroup;
+			children = (
+				C74B3D56193BF42300D87AAD /* iPad */,
+				C772372417F124C000003658 /* Luxi.entitlements */,
+				C772372217F0F3AD00003658 /* Images.xcassets */,
+				CCE42816178B7C3A00CB3537 /* LuxiAppDelegate.h */,
+				CCE42817178B7C3A00CB3537 /* LuxiAppDelegate.m */,
+				C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */,
+				C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard */,
+				C772372717F66CED00003658 /* MainViewController.h */,
+				C772372817F66CED00003658 /* MainViewController.m */,
+				C7B56710183E861B00631949 /* CameraView.h */,
+				C7B56711183E861B00631949 /* CameraView.m */,
+				C73F93FB180666CC00EE1016 /* Settings.h */,
+				C73F93FC180666CC00EE1016 /* Settings.m */,
+				C73F93F81806439C00EE1016 /* SettingsViewController.h */,
+				C73F93F91806439C00EE1016 /* SettingsViewController.m */,
+				CC17EC0417B2FFA700C779F0 /* WebBrowserViewController.h */,
+				CC17EC0517B2FFA700C779F0 /* WebBrowserViewController.m */,
+				C7BF6AEC1963CE9100E4E425 /* OnboardingViewController.h */,
+				C7BF6AED1963CE9100E4E425 /* OnboardingViewController.m */,
+				C7160E5C180391E4007614EE /* LuxiDetector.h */,
+				C7160E5D180391E4007614EE /* LuxiDetector.m */,
+				C71CA47F1820CCE3009F4297 /* SwitchCell */,
+				C70911D1181F484900F37153 /* UIDevice-Hardware */,
+				C70911CC181EE52900F37153 /* MBProgressHUD */,
+				CCE4280E178B7C3A00CB3537 /* Supporting Files */,
+			);
+			path = Luxi;
+			sourceTree = "<group>";
+		};
+		CCE4280E178B7C3A00CB3537 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CCE4280F178B7C3A00CB3537 /* Luxi-Info.plist */,
+				CCE42810178B7C3A00CB3537 /* InfoPlist.strings */,
+				CCE42813178B7C3A00CB3537 /* main.m */,
+				CCE42815178B7C3A00CB3537 /* Luxi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCE42803178B7C3A00CB3537 /* Luxi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCE42827178B7C3A00CB3537 /* Build configuration list for PBXNativeTarget "Luxi" */;
+			buildPhases = (
+				CCE42800178B7C3A00CB3537 /* Sources */,
+				CCE42801178B7C3A00CB3537 /* Frameworks */,
+				CCE42802178B7C3A00CB3537 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Luxi;
+			productName = HelloWorld;
+			productReference = CCE42804178B7C3A00CB3537 /* Luxi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCE427FC178B7C3A00CB3537 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HelloWorld;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Owen Davis";
+				TargetAttributes = {
+					CCE42803178B7C3A00CB3537 = {
+						DevelopmentTeam = 52RQYE3ZLS;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = CCE427FF178B7C3A00CB3537 /* Build configuration list for PBXProject "Luxi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CCE427FB178B7C3A00CB3537;
+			productRefGroup = CCE42805178B7C3A00CB3537 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCE42803178B7C3A00CB3537 /* Luxi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCE42802178B7C3A00CB3537 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCE42812178B7C3A00CB3537 /* InfoPlist.strings in Resources */,
+				C772372317F0F3AD00003658 /* Images.xcassets in Resources */,
+				C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard in Resources */,
+				C71CA47E1820C982009F4297 /* SwitchCell.xib in Resources */,
+				C71F2FB8193EDF3600B1CEE9 /* Storyboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCE42800178B7C3A00CB3537 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7B56712183E861B00631949 /* CameraView.m in Sources */,
+				CCE42814178B7C3A00CB3537 /* main.m in Sources */,
+				C772372917F66CED00003658 /* MainViewController.m in Sources */,
+				C71CA47C1820C95D009F4297 /* SwitchCell.m in Sources */,
+				C7BF6AEE1963CE9100E4E425 /* OnboardingViewController.m in Sources */,
+				C73F93FD180666CC00EE1016 /* Settings.m in Sources */,
+				CCE42818178B7C3A00CB3537 /* LuxiAppDelegate.m in Sources */,
+				C70911CF181EE52900F37153 /* MBProgressHUD.m in Sources */,
+				C73F93FA1806439C00EE1016 /* SettingsViewController.m in Sources */,
+				C7160E5E180391E4007614EE /* LuxiDetector.m in Sources */,
+				C73F940A18162EAD00EE1016 /* UIDevice-Hardware.m in Sources */,
+				CC17EC0617B2FFA700C779F0 /* WebBrowserViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CCE42810178B7C3A00CB3537 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCE42811178B7C3A00CB3537 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CCE42825178B7C3A00CB3537 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CCE42826178B7C3A00CB3537 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCE42828178B7C3A00CB3537 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Luxi/Luxi.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Luxi/Luxi-Prefix.pch";
+				INFOPLIST_FILE = "Luxi/Luxi-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = Luxi;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CCE42829178B7C3A00CB3537 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Luxi/Luxi.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Luxi/Luxi-Prefix.pch";
+				INFOPLIST_FILE = "Luxi/Luxi-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = Luxi;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCE427FF178B7C3A00CB3537 /* Build configuration list for PBXProject "Luxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCE42825178B7C3A00CB3537 /* Debug */,
+				CCE42826178B7C3A00CB3537 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCE42827178B7C3A00CB3537 /* Build configuration list for PBXNativeTarget "Luxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCE42828178B7C3A00CB3537 /* Debug */,
+				CCE42829178B7C3A00CB3537 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCE427FC178B7C3A00CB3537 /* Project object */;
+}
