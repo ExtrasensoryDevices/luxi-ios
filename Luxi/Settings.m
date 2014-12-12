@@ -12,7 +12,7 @@
 @interface Settings(){
     
     
-    BOOL                _detectLuxi;
+    BOOL                _luxiModeOn;
     BOOL                _showOnboarding;
     __strong NSNumber*  _calibrationEV;
     __strong NSNumber*  _calibrationLUX;
@@ -67,7 +67,7 @@ static Settings *settings = nil;
             [userDefaults setBool:YES forKey:ShowOnboarding];
             [userDefaults synchronize];
         }
-        _detectLuxi = [userDefaults boolForKey:LuxiIsOn];
+        _luxiModeOn = [userDefaults boolForKey:LuxiIsOn];
         _showOnboarding = [userDefaults boolForKey:ShowOnboarding];
         _iso = [userDefaults objectForKey:Iso];
         _fstop = [userDefaults objectForKey:Fstop];
@@ -81,18 +81,18 @@ static Settings *settings = nil;
 
 
 
--(BOOL) detectLuxi
+-(BOOL) luxiModeOn
 {
     @synchronized(self) {
-        return _detectLuxi;
+        return _luxiModeOn;
     }
 }
 
--(void)setDetectLuxi:(BOOL)luxiMode
+-(void)setLuxiModeOn:(BOOL)luxiMode
 {
     @synchronized(self) {
-        if (_detectLuxi != luxiMode){
-            _detectLuxi = luxiMode;
+        if (_luxiModeOn != luxiMode){
+            _luxiModeOn = luxiMode;
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             [userDefaults setBool:luxiMode forKey:LuxiIsOn];
             [userDefaults synchronize];

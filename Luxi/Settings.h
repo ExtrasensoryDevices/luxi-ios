@@ -12,7 +12,7 @@
 
 + (Settings*)userSettings;
 
-@property (atomic) BOOL detectLuxi;
+@property (atomic) BOOL luxiModeOn;
 
 @property (atomic) BOOL showOnboarding;
 

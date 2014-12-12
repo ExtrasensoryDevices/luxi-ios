@@ -21,6 +21,9 @@
 		C77B002118583AA7002733FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4280B178B7C3A00CB3537 /* CoreGraphics.framework */; };
 		C77B006918583B32002733FB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC829FCA178F9F2B00F3655E /* ImageIO.framework */; };
 		C77B006A18583B6C002733FB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4282E178B9DBE00CB3537 /* CoreMedia.framework */; };
+		C77C6AC71A37C3AB009B4358 /* Storyboard_iPad_test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77C6AC61A37C3AB009B4358 /* Storyboard_iPad_test.storyboard */; };
+		C77C6ACC1A37D2D1009B4358 /* HoldButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C6ACB1A37D2D1009B4358 /* HoldButtonView.m */; };
+		C77C6ACF1A37D309009B4358 /* HoldButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C77C6ACE1A37D309009B4358 /* HoldButtonView.xib */; };
 		C7B56712183E861B00631949 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B56711183E861B00631949 /* CameraView.m */; };
 		C7BF6AEE1963CE9100E4E425 /* OnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BF6AED1963CE9100E4E425 /* OnboardingViewController.m */; };
 		CC17EC0317B2FBE100C779F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC17EC0217B2FBE100C779F0 /* SystemConfiguration.framework */; };
@@ -54,6 +57,10 @@
 		C772372417F124C000003658 /* Luxi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Luxi.entitlements; sourceTree = "<group>"; };
 		C772372717F66CED00003658 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		C772372817F66CED00003658 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		C77C6AC61A37C3AB009B4358 /* Storyboard_iPad_test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPad_test.storyboard; sourceTree = "<group>"; };
+		C77C6ACA1A37D2D1009B4358 /* HoldButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoldButtonView.h; sourceTree = "<group>"; };
+		C77C6ACB1A37D2D1009B4358 /* HoldButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoldButtonView.m; sourceTree = "<group>"; };
+		C77C6ACE1A37D309009B4358 /* HoldButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HoldButtonView.xib; sourceTree = "<group>"; };
 		C7B56710183E861B00631949 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
 		C7B56711183E861B00631949 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		C7BF6AEC1963CE9100E4E425 /* OnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardingViewController.h; sourceTree = "<group>"; };
@@ -132,6 +139,16 @@
 			name = iPad;
 			sourceTree = "<group>";
 		};
+		C77C6ACD1A37D2E5009B4358 /* HoldButton */ = {
+			isa = PBXGroup;
+			children = (
+				C77C6ACA1A37D2D1009B4358 /* HoldButtonView.h */,
+				C77C6ACB1A37D2D1009B4358 /* HoldButtonView.m */,
+				C77C6ACE1A37D309009B4358 /* HoldButtonView.xib */,
+			);
+			name = HoldButton;
+			sourceTree = "<group>";
+		};
 		CCE427FB178B7C3A00CB3537 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +185,7 @@
 		CCE4280D178B7C3A00CB3537 /* Luxi */ = {
 			isa = PBXGroup;
 			children = (
+				C77C6AC61A37C3AB009B4358 /* Storyboard_iPad_test.storyboard */,
 				C74B3D56193BF42300D87AAD /* iPad */,
 				C772372417F124C000003658 /* Luxi.entitlements */,
 				C772372217F0F3AD00003658 /* Images.xcassets */,
@@ -189,6 +207,7 @@
 				C7BF6AED1963CE9100E4E425 /* OnboardingViewController.m */,
 				C7160E5C180391E4007614EE /* LuxiDetector.h */,
 				C7160E5D180391E4007614EE /* LuxiDetector.m */,
+				C77C6ACD1A37D2E5009B4358 /* HoldButton */,
 				C71CA47F1820CCE3009F4297 /* SwitchCell */,
 				C70911D1181F484900F37153 /* UIDevice-Hardware */,
 				C70911CC181EE52900F37153 /* MBProgressHUD */,
@@ -271,10 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCE42812178B7C3A00CB3537 /* InfoPlist.strings in Resources */,
+				C77C6ACF1A37D309009B4358 /* HoldButtonView.xib in Resources */,
 				C772372317F0F3AD00003658 /* Images.xcassets in Resources */,
 				C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard in Resources */,
 				C71CA47E1820C982009F4297 /* SwitchCell.xib in Resources */,
 				C71F2FB8193EDF3600B1CEE9 /* Storyboard_iPad.storyboard in Resources */,
+				C77C6AC71A37C3AB009B4358 /* Storyboard_iPad_test.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77C6ACC1A37D2D1009B4358 /* HoldButtonView.m in Sources */,
 				C7B56712183E861B00631949 /* CameraView.m in Sources */,
 				CCE42814178B7C3A00CB3537 /* main.m in Sources */,
 				C772372917F66CED00003658 /* MainViewController.m in Sources */,

@@ -73,13 +73,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Luxi/MainViewController.m"
-            timestampString = "426562341.17631"
+            filePath = "Luxi/OnboardingViewController.m"
+            timestampString = "429409772.912649"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
-            landmarkName = "-initBrightnessValues"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Luxi/OnboardingViewController.m"
-            timestampString = "429409772.912649"
+            filePath = "Luxi/UIDevice-Hardware.m"
+            timestampString = "439778647.584056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "-deviceFamily"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

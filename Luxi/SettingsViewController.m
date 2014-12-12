@@ -69,9 +69,9 @@ static NSString *SwitchCellNibName = @"SwitchCell";
         
         // detect luxi
         BOOL newDetectLuxiValue = !self.spotMeteringSwitch.isOn;
-        BOOL detectLuxiValueChanged = (settings.detectLuxi != newDetectLuxiValue);
+        BOOL detectLuxiValueChanged = (settings.luxiModeOn != newDetectLuxiValue);
         if (detectLuxiValueChanged){
-            settings.detectLuxi = newDetectLuxiValue;
+            settings.luxiModeOn = newDetectLuxiValue;
         }
         [self.settingsViewDelegate luxiModeDidChange:detectLuxiValueChanged];
         
@@ -168,7 +168,7 @@ static NSString *SwitchCellNibName = @"SwitchCell";
         // luxi detection
         cell.cellLabel.text = @"No Luxi";
         self.spotMeteringSwitch = cell.cellSwitch;
-        [cell.cellSwitch setOn:![Settings userSettings].detectLuxi animated:NO];
+        [cell.cellSwitch setOn:![Settings userSettings].luxiModeOn animated:NO];
     } else if (indexPath.section == 1 && indexPath.row == 0){
         // show onboarding
         cell.cellLabel.text = @"Show instructions again";

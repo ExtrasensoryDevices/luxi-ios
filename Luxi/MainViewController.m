@@ -433,7 +433,7 @@ enum Lockable{
 
 -(void)initCurrentState
 {
-    if ([Settings userSettings].detectLuxi){
+    if ([Settings userSettings].luxiModeOn){
         self.currentState = AppStateLuxiOffMode; // detect if luxi is ON later
         [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionFront];
         
@@ -1121,7 +1121,7 @@ int cnt;
 - (void)luxiModeDidChange:(BOOL) changed
 {
     if (changed){
-        [self changeStateTo: [Settings userSettings].detectLuxi ? AppStateLuxiOffMode : AppStateNoLuxiMode];
+        [self changeStateTo: [Settings userSettings].luxiModeOn ? AppStateLuxiOffMode : AppStateNoLuxiMode];
     }
 }
 
