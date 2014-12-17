@@ -12,7 +12,7 @@
 		C71CA47C1820C95D009F4297 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C71CA47B1820C95D009F4297 /* SwitchCell.m */; };
 		C71CA47E1820C982009F4297 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71CA47D1820C982009F4297 /* SwitchCell.xib */; };
 		C71F2FB8193EDF3600B1CEE9 /* Storyboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */; };
-		C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard */; };
+		C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard */; };
 		C73F93FA1806439C00EE1016 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F93F91806439C00EE1016 /* SettingsViewController.m */; };
 		C73F93FD180666CC00EE1016 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F93FC180666CC00EE1016 /* Settings.m */; };
 		C73F940A18162EAD00EE1016 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F940918162EAD00EE1016 /* UIDevice-Hardware.m */; };
@@ -21,7 +21,7 @@
 		C77B002118583AA7002733FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4280B178B7C3A00CB3537 /* CoreGraphics.framework */; };
 		C77B006918583B32002733FB /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC829FCA178F9F2B00F3655E /* ImageIO.framework */; };
 		C77B006A18583B6C002733FB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4282E178B9DBE00CB3537 /* CoreMedia.framework */; };
-		C77C6AC71A37C3AB009B4358 /* Storyboard_iPad_test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77C6AC61A37C3AB009B4358 /* Storyboard_iPad_test.storyboard */; };
+		C77C6AC71A37C3AB009B4358 /* Storyboard_iPhoneMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77C6AC61A37C3AB009B4358 /* Storyboard_iPhoneMain.storyboard */; };
 		C77C6ACC1A37D2D1009B4358 /* HoldButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C6ACB1A37D2D1009B4358 /* HoldButtonView.m */; };
 		C77C6ACF1A37D309009B4358 /* HoldButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C77C6ACE1A37D309009B4358 /* HoldButtonView.xib */; };
 		C7B56712183E861B00631949 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B56711183E861B00631949 /* CameraView.m */; };
@@ -46,7 +46,7 @@
 		C71CA47B1820C95D009F4297 /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
 		C71CA47D1820C982009F4297 /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPad.storyboard; sourceTree = "<group>"; };
-		C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone.storyboard; sourceTree = "<group>"; };
+		C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone4.storyboard; sourceTree = "<group>"; };
 		C73F93F81806439C00EE1016 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		C73F93F91806439C00EE1016 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		C73F93FB180666CC00EE1016 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -54,10 +54,9 @@
 		C73F940818162EAD00EE1016 /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
 		C73F940918162EAD00EE1016 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
 		C772372217F0F3AD00003658 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C772372417F124C000003658 /* Luxi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Luxi.entitlements; sourceTree = "<group>"; };
 		C772372717F66CED00003658 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		C772372817F66CED00003658 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		C77C6AC61A37C3AB009B4358 /* Storyboard_iPad_test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPad_test.storyboard; sourceTree = "<group>"; };
+		C77C6AC61A37C3AB009B4358 /* Storyboard_iPhoneMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhoneMain.storyboard; sourceTree = "<group>"; };
 		C77C6ACA1A37D2D1009B4358 /* HoldButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoldButtonView.h; sourceTree = "<group>"; };
 		C77C6ACB1A37D2D1009B4358 /* HoldButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoldButtonView.m; sourceTree = "<group>"; };
 		C77C6ACE1A37D309009B4358 /* HoldButtonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HoldButtonView.xib; sourceTree = "<group>"; };
@@ -132,13 +131,6 @@
 			name = SwitchCell;
 			sourceTree = "<group>";
 		};
-		C74B3D56193BF42300D87AAD /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
 		C77C6ACD1A37D2E5009B4358 /* HoldButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,14 +177,12 @@
 		CCE4280D178B7C3A00CB3537 /* Luxi */ = {
 			isa = PBXGroup;
 			children = (
-				C77C6AC61A37C3AB009B4358 /* Storyboard_iPad_test.storyboard */,
-				C74B3D56193BF42300D87AAD /* iPad */,
-				C772372417F124C000003658 /* Luxi.entitlements */,
+				C77C6AC61A37C3AB009B4358 /* Storyboard_iPhoneMain.storyboard */,
+				C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */,
+				C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard */,
 				C772372217F0F3AD00003658 /* Images.xcassets */,
 				CCE42816178B7C3A00CB3537 /* LuxiAppDelegate.h */,
 				CCE42817178B7C3A00CB3537 /* LuxiAppDelegate.m */,
-				C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */,
-				C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard */,
 				C772372717F66CED00003658 /* MainViewController.h */,
 				C772372817F66CED00003658 /* MainViewController.m */,
 				C7B56710183E861B00631949 /* CameraView.h */,
@@ -260,6 +250,9 @@
 					CCE42803178B7C3A00CB3537 = {
 						DevelopmentTeam = 52RQYE3ZLS;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
 							com.apple.iCloud = {
 								enabled = 0;
 							};
@@ -292,10 +285,10 @@
 				CCE42812178B7C3A00CB3537 /* InfoPlist.strings in Resources */,
 				C77C6ACF1A37D309009B4358 /* HoldButtonView.xib in Resources */,
 				C772372317F0F3AD00003658 /* Images.xcassets in Resources */,
-				C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone.storyboard in Resources */,
+				C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard in Resources */,
 				C71CA47E1820C982009F4297 /* SwitchCell.xib in Resources */,
 				C71F2FB8193EDF3600B1CEE9 /* Storyboard_iPad.storyboard in Resources */,
-				C77C6AC71A37C3AB009B4358 /* Storyboard_iPad_test.storyboard in Resources */,
+				C77C6AC71A37C3AB009B4358 /* Storyboard_iPhoneMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +390,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Luxi/Luxi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -417,7 +409,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Luxi/Luxi.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

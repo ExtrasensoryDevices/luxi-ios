@@ -630,7 +630,7 @@
         <image name="DefaultBtn" width="115" height="45"/>
         <image name="HoldBtn_DN" width="320" height="70"/>
         <image name="HoldBtn_UP" width="320" height="70"/>
-        <image name="Logo" width="202" height="125"/>
+        <image name="Logo" width="101" height="63"/>
         <image name="PickerStripe" width="1" height="1"/>
         <image name="Settings" width="30" height="30"/>
         <image name="Sight" width="1000" height="1000"/>

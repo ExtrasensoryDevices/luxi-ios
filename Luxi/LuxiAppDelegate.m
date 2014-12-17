@@ -7,12 +7,20 @@
 //
 
 #import "LuxiAppDelegate.h"
+#import "UIDevice-Hardware.h"
 
 @implementation LuxiAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after
+    
+    UIStoryboard* mainStoryBoard = [self getStoryboard];
+    UIViewController *initialViewController = [mainStoryBoard instantiateInitialViewController];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = initialViewController;
+    [self.window makeKeyAndVisible];
+    
     
     return YES;
 }
@@ -43,5 +51,27 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+-(UIStoryboard*) getStoryboard {
+    UIStoryboard *storyBoard = nil;
+    NSUInteger deviceFamily = [[UIDevice currentDevice] deviceFamily];
+    NSUInteger platformType = [[UIDevice currentDevice] platformType];
+
+    if (deviceFamily == UIDeviceFamilyiPad) {
+        storyBoard = [UIStoryboard storyboardWithName:@"Storyboard_iPad" bundle:nil];
+    }else {
+            // The iOS device = iPhone or iPod Touch
+            if (platformType == UIDevice4iPhone || platformType == UIDevice4SiPhone){
+                // iPhone 4
+                storyBoard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone4" bundle:nil];
+                
+            } else {
+                // other iPhones
+                storyBoard = [UIStoryboard storyboardWithName:@"Storyboard_iPhoneMain" bundle:nil];
+            }
+    }
+    return storyBoard;
+}
+
 
 @end

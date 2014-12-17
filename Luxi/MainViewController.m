@@ -419,7 +419,6 @@ enum Lockable{
     self.isIPhone5orHigher = YES;
     NSUInteger platformType = [[UIDevice currentDevice] platformType];
     if (platformType == UIDevice4iPhone || platformType == UIDevice4SiPhone){
-//        [self.buyLuxiBtn setImage:[UIImage imageNamed:@"NoLuxiiPhone4"] forState:UIControlStateNormal];
         self.isIPhone5orHigher = NO;
     }
     

@@ -11,7 +11,8 @@
     },
     {
       "idiom" : "iphone",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "indicator_bar@3x.png"
     },
     {
       "idiom" : "ipad",

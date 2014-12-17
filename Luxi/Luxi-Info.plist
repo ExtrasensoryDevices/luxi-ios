@@ -33,11 +33,11 @@
 		<string>Segan-Light.ttf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
-	<string>Storyboard_iPhone</string>
-	<key>UIMainStoryboardFile~iphone</key>
-	<string>Storyboard_iPhone</string>
+	<string>Storyboard_iPhoneMain</string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Storyboard_iPad</string>
+	<key>UIMainStoryboardFile~iphone</key>
+	<string>Storyboard_iPhoneMain</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

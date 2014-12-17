@@ -49,6 +49,7 @@
     return self;
 }
 
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
@@ -142,10 +143,31 @@
     // update UI
     [self setSightViewHidden: useFrontCamera];
     [self setCameraTapGestureRecognizerEnabled: (!useFrontCamera)];
-    
+    if (!useFrontCamera) {
+        
+        NSLog(@"-----------b/f----------");
+        NSLog(@"frame: (%f,%f), (%f,%f)", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+        NSLog(@"sight origin: (%f,%f)", self.sightView.frame.origin.x, self.sightView.frame.origin.y);
+        NSLog(@"sight centre: (%f,%f)", self.sightView.center.x, self.sightView.center.y);
+        NSLog(@"sight frame: (%f,%f)", self.sightView.frame.size.width, self.sightView.frame.size.width);
+        
+        
+        self.sightView.translatesAutoresizingMaskIntoConstraints = NO;
+        [self.sightView removeConstraints:self.sightView.constraints];
+        self.sightView.center = self.center; //  CGPointMake(0, 0);
+
+        
+        NSLog(@"-----------after----------");
+        NSLog(@"frame: (%f,%f), (%f,%f)", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
+        NSLog(@"sight origin: (%f,%f)", self.sightView.frame.origin.x, self.sightView.frame.origin.y);
+        NSLog(@"sight centre: (%f,%f)", self.sightView.center.x, self.sightView.center.y);
+        NSLog(@"sight frame: (%f,%f)", self.sightView.frame.size.width, self.sightView.frame.size.width);
+
+        
+        
+        
+    }
 }
-
-
 
 
 
