@@ -387,13 +387,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCM-Eh-TB0">
-                                <rect key="frame" x="0.0" y="-20" width="768" height="1024"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="n3X-I4-yXa" firstAttribute="top" secondItem="cCM-Eh-TB0" secondAttribute="bottom" id="QGB-pw-ljp"/>
-                            <constraint firstItem="cCM-Eh-TB0" firstAttribute="top" secondItem="fMu-Jr-F2h" secondAttribute="top" constant="-20" id="hMt-sQ-MhE"/>
+                            <constraint firstItem="cCM-Eh-TB0" firstAttribute="top" secondItem="fMu-Jr-F2h" secondAttribute="top" id="hMt-sQ-MhE"/>
                             <constraint firstItem="cCM-Eh-TB0" firstAttribute="leading" secondItem="fMu-Jr-F2h" secondAttribute="leading" id="im1-DX-vBC"/>
                             <constraint firstAttribute="trailing" secondItem="cCM-Eh-TB0" secondAttribute="trailing" id="jOc-m9-3QE"/>
                         </constraints>
@@ -539,7 +539,7 @@
         <image name="DefaultBtn" width="230" height="90"/>
         <image name="HoldBtn_DN" width="768" height="100"/>
         <image name="HoldBtn_UP" width="768" height="100"/>
-        <image name="Logo" width="101" height="63"/>
+        <image name="Logo" width="100" height="62"/>
         <image name="PickerStripe" width="1" height="1"/>
         <image name="Settings" width="30" height="30"/>
         <image name="Sight" width="1600" height="1600"/>

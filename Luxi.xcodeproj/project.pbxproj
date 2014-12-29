@@ -390,15 +390,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: James Flynn (8EWW3X39E5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: James Flynn (8EWW3X39E5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Luxi/Luxi-Prefix.pch";
 				INFOPLIST_FILE = "Luxi/Luxi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = Luxi;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "fbdb96ea-092e-4176-add5-42953c82e331";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "fbdb96ea-092e-4176-add5-42953c82e331";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -409,15 +409,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Distribution: James Flynn";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Distribution: James Flynn";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Luxi/Luxi-Prefix.pch";
 				INFOPLIST_FILE = "Luxi/Luxi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = Luxi;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "df6a7420-7384-482b-8d99-e9b7734a6e98";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "df6a7420-7384-482b-8d99-e9b7734a6e98";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

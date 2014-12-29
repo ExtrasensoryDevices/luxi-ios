@@ -7,26 +7,22 @@
     {
       "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "Onboarding_wide_2@2x.png"
+      "filename" : "iPhone_p1.png"
     },
     {
       "idiom" : "iphone",
-      "subtype" : "retina4",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "iPhone6Plus_p1.png"
     },
     {
       "idiom" : "ipad",
       "scale" : "1x",
-      "filename" : "2.png"
+      "filename" : "iPad_p1.png"
     },
     {
       "idiom" : "ipad",
       "scale" : "2x",
-      "filename" : "2@2x.png"
+      "filename" : "iPadRetina_p1.png"
     }
   ],
   "info" : {

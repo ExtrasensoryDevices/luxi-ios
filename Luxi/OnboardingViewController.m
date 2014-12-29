@@ -35,16 +35,19 @@
 {
     [super viewDidLoad];
     
-    UIDeviceFamily deviceFamily = [[UIDevice currentDevice] deviceFamily];
-    if (deviceFamily == UIDeviceFamilyiPad ){
-        _pageImages = @[@"Onboarding_Luxi_1.png", @"Onboarding_Luxi_2.png"];
-    } else { // iphone
+    NSUInteger platformType = [[UIDevice currentDevice] platformType];
+    if (platformType == UIDevice4iPhone || platformType == UIDevice4SiPhone){ // iphone 4
         if (self.luxiView){
-            _pageImages = @[@"Onboarding_Luxi_1.png", @"Onboarding_Luxi_2.png"];
+            _pageImages = @[@"Onboarding_iPhone4_LuxiOn_1", @"Onboarding_iPhone4_LuxiOn_2"];
         } else {
-            _pageImages = @[@"Onboarding_NoLuxi_1.png", @"Onboarding_NoLuxi_2.png"];
+            _pageImages = @[@"Onboarding_iPhone4_LuxiOff_1", @"Onboarding_iPhone4_LuxiOff_2"];
         }
+    } else if (platformType == UIDevice6iPhone) {
+        _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"];
+    } else {
+        _pageImages = @[@"Onboarding_1", @"Onboarding_2"];
     }
+
     
     _currentIndex = 0;
     [self updateImage];
