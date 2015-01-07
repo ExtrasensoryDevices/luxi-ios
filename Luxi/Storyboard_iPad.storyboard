@@ -541,9 +541,9 @@
         <image name="HoldBtn_UP" width="768" height="100"/>
         <image name="Logo" width="100" height="62"/>
         <image name="PickerStripe" width="1" height="1"/>
-        <image name="Settings" width="30" height="30"/>
+        <image name="Settings" width="60" height="60"/>
         <image name="Sight" width="1600" height="1600"/>
-        <image name="StatusBarBgr" width="320" height="20"/>
+        <image name="StatusBarBgr" width="640" height="40"/>
         <image name="calibrate" width="650" height="105"/>
         <image name="locked" width="17" height="17"/>
     </resources>
