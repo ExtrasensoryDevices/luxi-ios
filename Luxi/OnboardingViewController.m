@@ -74,7 +74,7 @@
                       duration:0.5f
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
-                        self.imageView.image = [UIImage imageNamed:self.pageImages[_currentIndex]];
+                        self.imageView.image = [UIImage imageNamed:self.pageImages[self->_currentIndex]];
                     } completion:NULL];
 }
 

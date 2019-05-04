@@ -251,7 +251,8 @@ enum Lockable{
                               @"406.4",
                               @"430.5",
                               @"456.1",
-                              @"512", nil];
+                              @"512",
+                              nil];
     
     self.timePickerValues = [[NSArray alloc] initWithObjects:@"1/16000",
                               @"1/12000",
@@ -309,7 +310,8 @@ enum Lockable{
                               @"16",
                               @"20",
                               @"26",
-                              @"32", nil];
+                              @"32",
+                             nil];
     
     self.timePickerNumericValues = [[NSArray alloc] initWithObjects:
                                      @"6.25E-05",
@@ -368,7 +370,8 @@ enum Lockable{
                                      @"16",
                                      @"20",
                                      @"26",
-                                     @"32", nil];
+                                     @"32",
+                                    nil];
     
     self.isoPickerValues = [[NSArray alloc] initWithObjects:@"0.8",
                             @"1",
@@ -413,7 +416,8 @@ enum Lockable{
                             @"12800",
                             @"25600",
                             @"51200",
-                            @"102400", nil];
+                            @"102400",
+                            nil];
     
     
     self.isIPhone5orHigher = YES;
@@ -447,8 +451,8 @@ enum Lockable{
 {
     // load default values
     NSNumber *savedFstop = [[Settings userSettings] fstop];
-    NSNumber *savedTime = [[Settings userSettings] time];
-    NSNumber *savedIso = [[Settings userSettings] iso];
+    NSNumber *savedTime  = [[Settings userSettings] time];
+    NSNumber *savedIso   = [[Settings userSettings] iso];
 
     if (savedFstop == nil && savedTime == nil && savedIso == nil) {
         self.fstopValueLocked = 2.8;
@@ -597,7 +601,7 @@ enum Lockable{
                           duration:0.2f
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:^{
-                            _onboardingViewController.view.alpha = 1.0f;
+                            self->_onboardingViewController.view.alpha = 1.0f;
                         } completion:nil];
         
         [Settings userSettings].showOnboarding = NO;
@@ -613,10 +617,10 @@ enum Lockable{
                           duration:0.2f
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:^{
-                            _onboardingViewController.view.alpha = 0.0f;
+                            self->_onboardingViewController.view.alpha = 0.0f;
                         } completion:^(BOOL finished){
-                            [_onboardingViewController removeFromParentViewController];
-                            [_onboardingViewController.view removeFromSuperview];
+                            [self->_onboardingViewController removeFromParentViewController];
+                            [self->_onboardingViewController.view removeFromSuperview];
                             self.onboardingViewController = nil;
                             [Settings userSettings].showOnboarding = NO;
                         }];

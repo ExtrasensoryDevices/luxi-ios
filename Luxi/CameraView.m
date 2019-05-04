@@ -78,9 +78,11 @@
     
     if (!self.camera || !self.videoInput){
         // error - no cameras available
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Camera Unavailable" message:@"Unable to use camera" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"Camera Unavailable" message:@"Unable to use camera" preferredStyle: UIAlertControllerStyleAlert];
         
+        [alert addAction: [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler: nil]];
+        UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+        [vc presentViewController:alert animated:YES completion:nil];
         return;
     }
     
@@ -118,7 +120,7 @@
     [_captureSession removeInput:_videoInput];
     [self setVideoInput:nil];
     [self initCamera:position];
-    [self updateUIUseFrontCamera:(position ==AVCaptureDevicePositionFront)];
+    [self updateUIUseFrontCamera:(position == AVCaptureDevicePositionFront)];
     [_captureSession addInput:_videoInput];
 }
 
@@ -127,7 +129,12 @@
 
 - (void) initCamera:(AVCaptureDevicePosition) position {
     
-    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession =
+    [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
+                                                           mediaType:AVMediaTypeVideo
+                                                            position:AVCaptureDevicePositionBack];
+    NSArray *devices = [captureDeviceDiscoverySession devices];
+    
     for (AVCaptureDevice *device in devices) {
         if ([device position] == position) {
             self.camera = device;

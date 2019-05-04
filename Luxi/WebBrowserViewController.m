@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSURL *url = [NSURL URLWithString:@"http://www.esdevices.com/collections/all/products/luxi"];
+    NSURL *url = [NSURL URLWithString:@"https://google.com"]; //@"http://luxiforall.com/buy-now
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webview loadRequest:request];
     
@@ -59,23 +59,19 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
+
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle: nil
+                                 message:@"Website is temporary unavailable. Please try again later."
+                                 preferredStyle: UIAlertControllerStyleAlert];
     
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:nil
-                          message:@"Website is temporary unavailable. Please try again later."
-                          delegate:self
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-    [alert show];
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger) buttonIndex{
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self dismiss];
+    }];
     
-    [self dismiss];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
-
-
-
 
 
 -(IBAction)dismiss{
