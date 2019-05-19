@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSURL *url = [NSURL URLWithString:@"https://google.com"]; //@"http://luxiforall.com/buy-now
+    NSURL *url = [NSURL URLWithString:@"https://luxiforall.com/buy-now"]; //@"http://luxiforall.com/buy-now
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [_webview loadRequest:request];
     

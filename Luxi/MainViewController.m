@@ -7,6 +7,8 @@
 //  Copyright (c) 2013 Alina Kholcheva. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
+
 #import "MainViewController.h"
 
 #import "Settings.h"
@@ -49,8 +51,6 @@ enum Lockable{
 
 @property (atomic) enum AppState currentState;
 
-@property (nonatomic) BOOL isIPhone5orHigher;
-
 
 // ---------  LUXI ON view  ---------------- //
 @property (weak, nonatomic) IBOutlet UIView *luxiView;
@@ -89,6 +89,8 @@ enum Lockable{
 @property (weak, nonatomic) IBOutlet UIView *noLuxiView;
 
 @property (weak, nonatomic) IBOutlet CameraView *cameraContainerView;
+
+@property (weak, nonatomic) IBOutlet UILabel *permissionLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *ev100Lbl1;
 @property (weak, nonatomic) IBOutlet UILabel *evLbl1;
@@ -420,31 +422,101 @@ enum Lockable{
                             nil];
     
     
-    self.isIPhone5orHigher = YES;
-    NSUInteger platformType = [[UIDevice currentDevice] platformType];
-    if (platformType == UIDevice4iPhone || platformType == UIDevice4SiPhone){
-        self.isIPhone5orHigher = NO;
-    }
-    
     [self initBrightnessValues];
     
     [self initCalibrationSliders];
     
-    [self initCurrentState];
-    
+    [self.permissionLabel setHidden: YES];
 }
+
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//
+//}
 
 -(void)initCurrentState
 {
-    if ([Settings userSettings].luxiModeOn){
-        self.currentState = AppStateLuxiOffMode; // detect if luxi is ON later
-        [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionFront];
-        
-    } else {
-        self.currentState = AppStateNoLuxiMode;
-        [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionBack];
+    
+    NSString *mediaType = AVMediaTypeVideo;
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+
+    switch (authStatus) {
+        case AVAuthorizationStatusAuthorized: {
+            if ([Settings userSettings].luxiModeOn){
+                self.currentState = AppStateLuxiOffMode; // detect if luxi is ON later
+                [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionFront];
+                
+            } else {
+                self.currentState = AppStateNoLuxiMode;
+                [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionBack];
+            }
+            [self updateUIPermissionGranted: YES];
+            break;
+        }
+        case AVAuthorizationStatusDenied:
+        case AVAuthorizationStatusRestricted: {
+            // denied
+            // restricted (parental control?), normally won't happen
+            UIAlertController *alert = [UIAlertController
+                                        alertControllerWithTitle: @"Luxi uses your device's front-facing camera as its light sensor."
+                                        message: @"Please allow Luxi to use the camera in the Settings app."
+                                        preferredStyle: UIAlertControllerStyleAlert];
+
+            UIAlertAction *cancelAction = [UIAlertAction
+                                           actionWithTitle:@"Cancel"
+                                           style:UIAlertActionStyleCancel
+                                           handler:nil];
+            
+            [alert addAction:cancelAction];
+            UIAlertAction *settingsAction = [UIAlertAction
+                                           actionWithTitle:@"Settings"
+                                           style:UIAlertActionStyleDefault
+                                           handler:^(UIAlertAction *action){
+                                               [self openSettings];
+                                           }];
+            
+            [alert addAction:settingsAction];
+            [self presentViewController: alert animated:YES completion:nil];
+
+            [self updateUIPermissionGranted: NO];
+            break;
+        }
+        case AVAuthorizationStatusNotDetermined: {
+            [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
+                if(granted){
+                    NSLog(@"Granted access to %@", mediaType);
+                } else {
+                    NSLog(@"Not granted access to %@", mediaType);
+                }
+                [self updateUIPermissionGranted: granted];
+            }];
+            break;
+        }
     }
 
+}
+
+-(void) updateUIPermissionGranted:(BOOL)granted
+{
+    [self.permissionLabel setHidden: granted];
+    
+    if (granted) {
+        for (UIGestureRecognizer *recognizer in self.permissionLabel.gestureRecognizers) {
+            [self.permissionLabel removeGestureRecognizer: recognizer];
+        }
+    } else if (self.permissionLabel.gestureRecognizers.count == 0) {
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleNoCameraViewTap:)];
+        [self.permissionLabel addGestureRecognizer:tapRecognizer];
+        [self.permissionLabel setUserInteractionEnabled:YES];
+    }
+}
+
+-(void) openSettings
+{
+    [UIApplication.sharedApplication
+     openURL: [NSURL URLWithString: UIApplicationOpenSettingsURLString]
+     options:@{}
+     completionHandler:nil];
 }
 
 -(void) initBrightnessValues
@@ -545,6 +617,9 @@ enum Lockable{
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    [self initCurrentState];
+    
     [self showOnboarding];
 
     [_cameraContainerView setDelegate:self];
@@ -677,6 +752,13 @@ enum Lockable{
 
 
 #pragma mark - Gesture handling
+
+
+
+- (void)handleNoCameraViewTap:(UITapGestureRecognizer *)sender {
+    [self openSettings];
+}
+
 
 -(void) initLabelViewGestureRecognizers
 {
@@ -956,7 +1038,7 @@ int cnt;
 
 -(void) handleLuxiIsOn:(BOOL)isOn
 {
-    int threshold = self.isIPhone5orHigher ? 10 : 3;
+    int threshold = 10;
     if (isOn){
         if (self.currentState == AppStateLuxiOffMode){
             if (cnt == threshold){
@@ -1109,9 +1191,6 @@ int cnt;
                                       iso:nil];
         
     }
-//    [[Settings userSettings] setFstop:[NSNumber numberWithFloat:self.fstopValueLocked]
-//                                 time:[NSNumber numberWithFloat:self.timeValueLocked]
-//                                  iso:[NSNumber numberWithFloat:self.isoValueLocked]];
 }
 
 

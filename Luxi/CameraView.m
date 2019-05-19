@@ -66,15 +66,11 @@
     [_sightView setHidden:hidden];
 }
 
-
-
-
-
 - (void)setupCaptureSession:(AVCaptureDevicePosition) position
 {
     
     [self initCamera:position];
-    [self updateUIUseFrontCamera:(position ==AVCaptureDevicePositionFront)];
+    [self updateUIUseFrontCamera:(position == AVCaptureDevicePositionFront)];
     
     if (!self.camera || !self.videoInput){
         // error - no cameras available
@@ -132,7 +128,7 @@
     AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession =
     [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
                                                            mediaType:AVMediaTypeVideo
-                                                            position:AVCaptureDevicePositionBack];
+                                                            position:position];//AVCaptureDevicePositionBack];
     NSArray *devices = [captureDeviceDiscoverySession devices];
     
     for (AVCaptureDevice *device in devices) {

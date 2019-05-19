@@ -36,13 +36,7 @@
     [super viewDidLoad];
     
     NSUInteger platformType = [[UIDevice currentDevice] platformType];
-    if (platformType == UIDevice4iPhone || platformType == UIDevice4SiPhone){ // iphone 4
-        if (self.luxiView){
-            _pageImages = @[@"Onboarding_iPhone4_LuxiOn_1", @"Onboarding_iPhone4_LuxiOn_2"];
-        } else {
-            _pageImages = @[@"Onboarding_iPhone4_LuxiOff_1", @"Onboarding_iPhone4_LuxiOff_2"];
-        }
-    } else if (platformType == UIDevice6iPhone) {
+    if (platformType == UIDevice6iPhone) {
         _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"];
     } else {
         _pageImages = @[@"Onboarding_1", @"Onboarding_2"];

@@ -12,7 +12,6 @@
 		C71CA47C1820C95D009F4297 /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C71CA47B1820C95D009F4297 /* SwitchCell.m */; };
 		C71CA47E1820C982009F4297 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71CA47D1820C982009F4297 /* SwitchCell.xib */; };
 		C71F2FB8193EDF3600B1CEE9 /* Storyboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */; };
-		C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard */; };
 		C73F93FA1806439C00EE1016 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F93F91806439C00EE1016 /* SettingsViewController.m */; };
 		C73F93FD180666CC00EE1016 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F93FC180666CC00EE1016 /* Settings.m */; };
 		C73F940A18162EAD00EE1016 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F940918162EAD00EE1016 /* UIDevice-Hardware.m */; };
@@ -47,7 +46,6 @@
 		C71CA47B1820C95D009F4297 /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
 		C71CA47D1820C982009F4297 /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
 		C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPad.storyboard; sourceTree = "<group>"; };
-		C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard_iPhone4.storyboard; sourceTree = "<group>"; };
 		C73F93F81806439C00EE1016 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		C73F93F91806439C00EE1016 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		C73F93FB180666CC00EE1016 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 			children = (
 				C77C6AC61A37C3AB009B4358 /* Storyboard_iPhoneMain.storyboard */,
 				C71F2FB7193EDF3600B1CEE9 /* Storyboard_iPad.storyboard */,
-				C71F2FB9193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard */,
 				C772372217F0F3AD00003658 /* Images.xcassets */,
 				CCE42816178B7C3A00CB3537 /* LuxiAppDelegate.h */,
 				CCE42817178B7C3A00CB3537 /* LuxiAppDelegate.m */,
@@ -290,7 +287,6 @@
 				CCE42812178B7C3A00CB3537 /* InfoPlist.strings in Resources */,
 				C77C6ACF1A37D309009B4358 /* HoldButtonView.xib in Resources */,
 				C772372317F0F3AD00003658 /* Images.xcassets in Resources */,
-				C71F2FBA193EDF5200B1CEE9 /* Storyboard_iPhone4.storyboard in Resources */,
 				C71CA47E1820C982009F4297 /* SwitchCell.xib in Resources */,
 				C71F2FB8193EDF3600B1CEE9 /* Storyboard_iPad.storyboard in Resources */,
 				C77C6AC71A37C3AB009B4358 /* Storyboard_iPhoneMain.storyboard in Resources */,

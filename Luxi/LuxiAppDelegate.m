@@ -55,20 +55,11 @@
 -(UIStoryboard*) getStoryboard {
     UIStoryboard *storyBoard = nil;
     NSUInteger deviceFamily = [[UIDevice currentDevice] deviceFamily];
-    NSUInteger platformType = [[UIDevice currentDevice] platformType];
 
     if (deviceFamily == UIDeviceFamilyiPad) {
         storyBoard = [UIStoryboard storyboardWithName:@"Storyboard_iPad" bundle:nil];
     }else {
-            // The iOS device = iPhone or iPod Touch
-            if (platformType == UIDevice4iPhone || platformType == UIDevice4SiPhone){
-                // iPhone 4
-                storyBoard = [UIStoryboard storyboardWithName:@"Storyboard_iPhone4" bundle:nil];
-                
-            } else {
-                // other iPhones
-                storyBoard = [UIStoryboard storyboardWithName:@"Storyboard_iPhoneMain" bundle:nil];
-            }
+        storyBoard = [UIStoryboard storyboardWithName:@"Storyboard_iPhoneMain" bundle:nil];
     }
     return storyBoard;
 }
