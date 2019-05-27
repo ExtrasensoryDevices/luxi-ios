@@ -592,6 +592,8 @@ enum Lockable{
 
 -(void) initCalibrationSliders
 {
+    // Fix for the size of the thumb:
+    //     imageWithBorderFromImage inscreases the size and draws a border
     UIImage *thumb = [self imageWithBorderFromImage:[UIImage imageNamed:@"IndicatorBar"]];
     UIImage *track = [UIImage imageNamed:@"SliderTrack"];
     
@@ -628,32 +630,14 @@ enum Lockable{
     CGContextSetFillColorWithColor(context, UIColor.whiteColor.CGColor);
     CGContextSetStrokeColorWithColor(context,UIColor.blackColor.CGColor);
     CGContextSetLineWidth(context, 2.0);
-    //CGContextStrokeRect(context, CGRectMake(0, 0, size.width, size.height));
     
     CGRect rect = CGRectMake(0, 0, size.width, size.height);
     CGContextFillRect(context, rect);
     CGContextStrokeRect(context, rect);
     
-    //CGContextFillRect(context,  CGRectMake(0, 0, size.width, size.height))
-    //drawAtPoint(origin)
-    
     UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
-//    UIGraphicsBeginImageContext(size);
-//    CGRect rect = CGRectMake(0, 0, size.width, size.height);
-//    [source drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
-//
-//
-//
-//
-//
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetStrokeColorWithColor(context,UIColor.blackColor.CGColor);
-//    CGContextSetLineWidth(context, 2.0);
-//    CGContextStrokeRect(context, rect);
-//    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
+
     return testImg;
 }
 
@@ -694,12 +678,12 @@ enum Lockable{
 //    [UIView beginAnimations:nil context:NULL];
 //    [UIView setAnimationDuration:0.5];
 //    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:NO];
-//    
+//
 //    [self.noLuxiView setHidden:YES];
 //    [self.luxiView setHidden:NO];
-//    
+//
 //    [self.buyLuxiBtn setHidden:(self.currentState == AppStateLuxiOnMode)];
-//    
+//
 //    [UIView commitAnimations];
     
  
