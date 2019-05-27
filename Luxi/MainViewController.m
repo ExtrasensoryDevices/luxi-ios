@@ -668,28 +668,6 @@ enum Lockable{
     [self createShadowForPickerView];
     
     [super viewDidAppear:animated];
-    
-    
-    
-    
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    
-    // FIXME: remove
-//    [UIView beginAnimations:nil context:NULL];
-//    [UIView setAnimationDuration:0.5];
-//    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:NO];
-//
-//    [self.noLuxiView setHidden:YES];
-//    [self.luxiView setHidden:NO];
-//
-//    [self.buyLuxiBtn setHidden:(self.currentState == AppStateLuxiOnMode)];
-//
-//    [UIView commitAnimations];
-    
- 
-    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    
-
 }
 
 -(void) viewWillDisappear:(BOOL)animated
