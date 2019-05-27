@@ -13,8 +13,6 @@
 
 #import "Settings.h"
 
-#import "UIDevice-Hardware.h"
-
 #import "OnboardingViewController.h"
 
 
@@ -113,6 +111,7 @@ enum Lockable{
 
 // ---------  ROOT view  ---------------- //
 @property (weak, nonatomic) IBOutlet UIButton *buyLuxiBtn;
+@property (weak, nonatomic) IBOutlet UILabel  *helpLabel;
 @property (weak, nonatomic) IBOutlet UIButton *settingsBtn;
 @property (weak, nonatomic) IBOutlet UIButton *holdBtn;
 
@@ -427,12 +426,22 @@ enum Lockable{
     [self initCalibrationSliders];
     
     [self.permissionLabel setHidden: YES];
+    
+    [self setupHelpButton];
 }
 
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//
-//}
+-(void)setupHelpButton {
+    
+    UIColor *color = [UIColor colorWithRed:194.0/255.0 green:194.0/255.0 blue:194.0/255.0 alpha:1.0];
+    [self.helpLabel setTextColor:color];
+    [self.helpLabel.layer setBorderColor:color.CGColor];
+    [self.helpLabel.layer setCornerRadius:self.helpLabel.bounds.size.width/2];
+    [self.helpLabel.layer setBorderWidth:3];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapHelpButton:)];
+    [self.helpLabel addGestureRecognizer:tapRecognizer];
+    [self.helpLabel setUserInteractionEnabled:YES];
+}
 
 -(void)initCurrentState
 {
@@ -488,7 +497,9 @@ enum Lockable{
                 } else {
                     NSLog(@"Not granted access to %@", mediaType);
                 }
-                [self updateUIPermissionGranted: granted];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self updateUIPermissionGranted: granted];
+                });
             }];
             break;
         }
@@ -581,8 +592,9 @@ enum Lockable{
 
 -(void) initCalibrationSliders
 {
-    UIImage *thumb = [UIImage imageNamed:@"IndicatorBar"];
+    UIImage *thumb = [self imageWithBorderFromImage:[UIImage imageNamed:@"IndicatorBar"]];
     UIImage *track = [UIImage imageNamed:@"SliderTrack"];
+    
     [self.evSlider setThumbImage:thumb forState:UIControlStateNormal];
     [self.evSlider setThumbImage:thumb forState:UIControlStateHighlighted];
     [self.evSlider setMinimumTrackImage: track forState: UIControlStateNormal];
@@ -603,6 +615,46 @@ enum Lockable{
         [self.luxSlider setValue:[savedCalibrationLux floatValue]];
     }
     [self updateCalibrationLabels];
+    
+}
+
+- (UIImage*)imageWithBorderFromImage:(UIImage*)source;
+{
+    CGSize oldSize = [source size];
+    CGSize size = CGSizeMake(oldSize.width*2, oldSize.height*1.2);
+    
+    UIGraphicsBeginImageContextWithOptions(size, true, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, UIColor.whiteColor.CGColor);
+    CGContextSetStrokeColorWithColor(context,UIColor.blackColor.CGColor);
+    CGContextSetLineWidth(context, 2.0);
+    //CGContextStrokeRect(context, CGRectMake(0, 0, size.width, size.height));
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    CGContextFillRect(context, rect);
+    CGContextStrokeRect(context, rect);
+    
+    //CGContextFillRect(context,  CGRectMake(0, 0, size.width, size.height))
+    //drawAtPoint(origin)
+    
+    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+//    UIGraphicsBeginImageContext(size);
+//    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+//    [source drawInRect:rect blendMode:kCGBlendModeNormal alpha:1.0];
+//
+//
+//
+//
+//
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextSetStrokeColorWithColor(context,UIColor.blackColor.CGColor);
+//    CGContextSetLineWidth(context, 2.0);
+//    CGContextStrokeRect(context, rect);
+//    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+    return testImg;
 }
 
 
@@ -634,6 +686,26 @@ enum Lockable{
     [super viewDidAppear:animated];
     
     
+    
+    
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
+    // FIXME: remove
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:0.5];
+//    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.view cache:NO];
+//    
+//    [self.noLuxiView setHidden:YES];
+//    [self.luxiView setHidden:NO];
+//    
+//    [self.buyLuxiBtn setHidden:(self.currentState == AppStateLuxiOnMode)];
+//    
+//    [UIView commitAnimations];
+    
+ 
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    
+
 }
 
 -(void) viewWillDisappear:(BOOL)animated
@@ -980,10 +1052,16 @@ enum Lockable{
         [UIView commitAnimations];
     }
 
-    
-    
-    
 }
+
+
+
+- (void)didTapHelpButton:(UITapGestureRecognizer *)sender{
+    NSURL *URL = [NSURL URLWithString: @"https://luxiforall.com/app-help"];
+    [UIApplication.sharedApplication openURL:URL options:@{} completionHandler:nil];
+}
+
+
 
 #pragma mark - Screen label setters
 

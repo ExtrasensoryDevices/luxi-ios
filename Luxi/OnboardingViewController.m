@@ -7,7 +7,6 @@
 //
 
 #import "OnboardingViewController.h"
-#import "UIDevice-Hardware.h"
 
 @interface OnboardingViewController (){
     NSInteger _currentIndex;
@@ -35,12 +34,13 @@
 {
     [super viewDidLoad];
     
-    NSUInteger platformType = [[UIDevice currentDevice] platformType];
-    if (platformType == UIDevice6iPhone) {
-        _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"];
-    } else {
-        _pageImages = @[@"Onboarding_1", @"Onboarding_2"];
-    }
+    // FIXME: ONBOARDING
+//    NSUInteger platformType = [[UIDevice currentDevice] platformType];
+//    if (platformType == UIDevice6iPhone) {
+//        _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"]; //6, 7, 8, x, xr, xs
+//    } else {
+        _pageImages = @[@"Onboarding_1", @"Onboarding_2"]; //5, 6+, 7+, 8+, xs max
+//    }
 
     
     _currentIndex = 0;

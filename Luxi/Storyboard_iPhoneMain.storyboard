@@ -58,6 +58,16 @@
                                     <segue destination="91y-dW-8Pe" kind="presentation" identifier="goToSettingsView" id="Pns-2Q-rdO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRa-qN-YST">
+                                <rect key="frame" x="295" y="41" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="QJK-Ci-o0R"/>
+                                    <constraint firstAttribute="width" secondItem="DRa-qN-YST" secondAttribute="height" multiplier="1:1" id="XN5-VN-MN4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxo-Xj-SNZ" userLabel="View - NoLuxi">
                                 <rect key="frame" x="0.0" y="120" width="375" height="297"/>
                                 <subviews>
@@ -621,6 +631,7 @@ camera access.</string>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="2qw-81-sze" secondAttribute="trailing" id="DCd-lN-b4c"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="Z6b-OH-XGL" secondAttribute="trailing" id="HBL-QX-Wm9"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="0ii-j8-IEv" secondAttribute="trailing" id="IfM-oP-5B9"/>
+                            <constraint firstItem="DRa-qN-YST" firstAttribute="top" secondItem="R8H-1B-BXC" secondAttribute="top" constant="7" id="JuJ-Fm-R34"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="hxo-Xj-SNZ" secondAttribute="trailing" id="OI5-QN-eVx"/>
                             <constraint firstItem="342-hf-855" firstAttribute="top" secondItem="0ii-j8-IEv" secondAttribute="bottom" constant="74" id="OTG-Um-lwW"/>
                             <constraint firstItem="Z6b-OH-XGL" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="RN2-9L-0ux"/>
@@ -632,6 +643,7 @@ camera access.</string>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="wQf-os-fSl" secondAttribute="trailing" id="bSd-5K-9mK"/>
                             <constraint firstItem="hxo-Xj-SNZ" firstAttribute="top" secondItem="Z6b-OH-XGL" secondAttribute="bottom" constant="-5" id="l6l-l1-wa4"/>
                             <constraint firstItem="mC4-4C-NND" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="lST-xo-VPW"/>
+                            <constraint firstItem="R8H-1B-BXC" firstAttribute="leading" secondItem="DRa-qN-YST" secondAttribute="trailing" constant="7" id="lUS-HP-5EP"/>
                             <constraint firstItem="2qw-81-sze" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="nZ8-QI-ibc"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="342-hf-855" secondAttribute="trailing" id="oiy-Q3-Cv3"/>
                             <constraint firstItem="Z6b-OH-XGL" firstAttribute="top" secondItem="6zB-Qi-Hhe" secondAttribute="top" constant="5" id="pGk-su-yFb"/>
@@ -655,7 +667,6 @@ camera access.</string>
                             </mask>
                         </variation>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="buyLuxiBtn" destination="Z6b-OH-XGL" id="qw0-zC-7ob"/>
                         <outlet property="cameraContainerView" destination="RXD-u4-I8d" id="wEs-vc-7DF"/>
@@ -666,6 +677,7 @@ camera access.</string>
                         <outlet property="fstopLbl1" destination="LiJ-yK-lTe" id="buy-ac-Icf"/>
                         <outlet property="fstopLockImg1" destination="0Dj-WO-lbn" id="LbC-nw-QMz"/>
                         <outlet property="fstopView1" destination="M4q-wt-ft7" id="48i-RE-HgO"/>
+                        <outlet property="helpLabel" destination="DRa-qN-YST" id="afA-RB-Ua5"/>
                         <outlet property="holdBtn" destination="wQf-os-fSl" id="g6P-qd-O94"/>
                         <outlet property="isoLbl1" destination="5A8-Kx-OKh" id="wt8-m7-dwl"/>
                         <outlet property="isoLockImg1" destination="sYJ-mB-PK9" id="YJp-hc-QFq"/>
@@ -727,28 +739,6 @@ camera access.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatusBarBgr" translatesAutoresizingMaskIntoConstraints="NO" id="ByX-Wb-Pv4" userLabel="Image View - Status Bar bgr">
-                                <rect key="frame" x="53" y="28" width="320" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-CQ-Ycc">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="AN6-xw-V3w"/>
-                                </constraints>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Buy Luxi" id="8s1-Xa-CEA">
-                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="FOj-Qy-Acu">
-                                            <connections>
-                                                <action selector="dismiss" destination="Spl-vd-e5b" id="ZYE-T1-Rse"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIz-Tj-BkE">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -756,30 +746,50 @@ camera access.</string>
                                     <outlet property="delegate" destination="Spl-vd-e5b" id="S08-Hp-m5h"/>
                                 </connections>
                             </webView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SeJ-df-yf6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Buy Luxi" id="Ijp-VC-5yR">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="UVQ-HV-6zL">
+                                            <connections>
+                                                <action selector="dismiss" destination="Spl-vd-e5b" id="Cyh-kI-tnq"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatusBarBgr" translatesAutoresizingMaskIntoConstraints="NO" id="V8K-u2-3dc" userLabel="Image View - StatusBar bgr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IIz-Tj-BkE" firstAttribute="top" secondItem="eVb-CQ-Ycc" secondAttribute="bottom" id="Gjz-j9-a0G"/>
+                            <constraint firstItem="SeJ-df-yf6" firstAttribute="trailing" secondItem="5fi-JJ-E0u" secondAttribute="trailing" id="54E-6c-A9p"/>
+                            <constraint firstItem="SeJ-df-yf6" firstAttribute="leading" secondItem="5fi-JJ-E0u" secondAttribute="leading" id="H1N-a3-NCo"/>
+                            <constraint firstItem="V8K-u2-3dc" firstAttribute="top" secondItem="mfv-jo-7st" secondAttribute="top" id="HDU-JZ-UdM"/>
                             <constraint firstItem="IIz-Tj-BkE" firstAttribute="leading" secondItem="5fi-JJ-E0u" secondAttribute="leading" id="HJJ-Ud-48c"/>
-                            <constraint firstItem="5fi-JJ-E0u" firstAttribute="trailing" secondItem="eVb-CQ-Ycc" secondAttribute="trailing" id="X7P-CC-dbH"/>
+                            <constraint firstItem="V8K-u2-3dc" firstAttribute="leading" secondItem="mfv-jo-7st" secondAttribute="leading" id="SUR-Tz-GYe"/>
+                            <constraint firstItem="IIz-Tj-BkE" firstAttribute="top" secondItem="SeJ-df-yf6" secondAttribute="bottom" id="Yg5-Ut-Qhu"/>
                             <constraint firstItem="5fi-JJ-E0u" firstAttribute="trailing" secondItem="IIz-Tj-BkE" secondAttribute="trailing" id="aJk-qA-IOh"/>
-                            <constraint firstItem="eVb-CQ-Ycc" firstAttribute="top" secondItem="5fi-JJ-E0u" secondAttribute="top" id="lDW-hH-iCk"/>
-                            <constraint firstItem="eVb-CQ-Ycc" firstAttribute="leading" secondItem="5fi-JJ-E0u" secondAttribute="leading" id="wxO-n7-i2m"/>
+                            <constraint firstAttribute="trailing" secondItem="V8K-u2-3dc" secondAttribute="trailing" id="aKD-BP-wCF"/>
+                            <constraint firstItem="SeJ-df-yf6" firstAttribute="top" secondItem="V8K-u2-3dc" secondAttribute="bottom" id="cug-2C-KPr"/>
                             <constraint firstItem="5fi-JJ-E0u" firstAttribute="bottom" secondItem="IIz-Tj-BkE" secondAttribute="bottom" id="xG2-J4-0j1"/>
+                            <constraint firstItem="SeJ-df-yf6" firstAttribute="top" secondItem="5fi-JJ-E0u" secondAttribute="top" id="xlI-Je-wsP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5fi-JJ-E0u"/>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="statusBarBgr" destination="ByX-Wb-Pv4" id="MZz-4i-oLs"/>
                         <outlet property="webview" destination="IIz-Tj-BkE" id="0ND-pm-5Nv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4C-Aw-SWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982.03125" y="-205.6640625"/>
+            <point key="canvasLocation" x="981.60000000000002" y="-206.44677661169416"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Wmo-Su-BSs">
@@ -789,14 +799,10 @@ camera access.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatusBarBgr" translatesAutoresizingMaskIntoConstraints="NO" id="jxi-Cl-Fym" userLabel="Image View - StatusBar bgr">
-                                <rect key="frame" x="-18" y="-20" width="320" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-4t-xF1">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="0.0"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Settings" id="DAQ-bl-4gg">
@@ -817,16 +823,23 @@ camera access.</string>
                                     <outlet property="delegate" destination="91y-dW-8Pe" id="oUf-F1-pfT"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StatusBarBgr" translatesAutoresizingMaskIntoConstraints="NO" id="cWN-Nw-nFV" userLabel="Image View - StatusBar bgr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6e3-Al-F5i" firstAttribute="trailing" secondItem="JZk-4t-xF1" secondAttribute="trailing" id="1fk-NV-ReF"/>
+                            <constraint firstItem="JZk-4t-xF1" firstAttribute="top" secondItem="cWN-Nw-nFV" secondAttribute="bottom" id="979-tI-VjM"/>
                             <constraint firstItem="5of-ei-GxW" firstAttribute="leading" secondItem="6e3-Al-F5i" secondAttribute="leading" id="F62-Mm-0LC"/>
                             <constraint firstItem="5of-ei-GxW" firstAttribute="top" secondItem="JZk-4t-xF1" secondAttribute="bottom" id="Siv-hz-ZYT"/>
                             <constraint firstItem="6e3-Al-F5i" firstAttribute="bottom" secondItem="5of-ei-GxW" secondAttribute="bottom" id="TR4-sG-CgJ"/>
+                            <constraint firstItem="cWN-Nw-nFV" firstAttribute="leading" secondItem="RYX-UF-oUj" secondAttribute="leading" id="Wgg-WF-wJ8"/>
                             <constraint firstItem="JZk-4t-xF1" firstAttribute="leading" secondItem="6e3-Al-F5i" secondAttribute="leading" id="cFH-Hg-XTA"/>
                             <constraint firstItem="JZk-4t-xF1" firstAttribute="top" secondItem="6e3-Al-F5i" secondAttribute="top" id="e9B-oB-ObW"/>
                             <constraint firstItem="6e3-Al-F5i" firstAttribute="trailing" secondItem="5of-ei-GxW" secondAttribute="trailing" id="iDB-0c-0wJ"/>
+                            <constraint firstAttribute="trailing" secondItem="cWN-Nw-nFV" secondAttribute="trailing" id="m7q-wl-dFo"/>
+                            <constraint firstItem="cWN-Nw-nFV" firstAttribute="top" secondItem="RYX-UF-oUj" secondAttribute="top" id="oDt-uG-BaS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6e3-Al-F5i"/>
                     </view>
@@ -834,13 +847,12 @@ camera access.</string>
                     <navigationItem key="navigationItem" id="uhW-RB-E52"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="statusBarBgr" destination="jxi-Cl-Fym" id="ssb-cK-cpM"/>
                         <outlet property="tableView" destination="5of-ei-GxW" id="mge-uw-wMb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDX-ER-q8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982.03125" y="485.15625"/>
+            <point key="canvasLocation" x="981.60000000000002" y="484.40779610194909"/>
         </scene>
     </scenes>
     <resources>
