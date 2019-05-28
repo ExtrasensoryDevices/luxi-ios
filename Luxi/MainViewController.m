@@ -174,6 +174,9 @@ enum Lockable{
 @implementation MainViewController
 
 
+BOOL _initialized = false;
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -654,7 +657,10 @@ enum Lockable{
 - (void)viewDidAppear:(BOOL)animated
 {
     
-    [self initCurrentState];
+    if (!_initialized) {
+        [self initCurrentState];
+        _initialized = true;
+    }
     
     [self showOnboarding];
 

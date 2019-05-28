@@ -59,7 +59,10 @@
 }
 */
 
-
+- (void)willMoveToWindow:(UIWindow *)newWindow {
+    [self.sightView removeConstraints:self.sightView.constraints];
+    self.sightView.translatesAutoresizingMaskIntoConstraints = NO;
+}
 
 -(void) setSightViewHidden:(BOOL)hidden
 {
@@ -68,7 +71,6 @@
 
 - (void)setupCaptureSession:(AVCaptureDevicePosition) position
 {
-    
     [self initCamera:position];
     [self updateUIUseFrontCamera:(position == AVCaptureDevicePositionFront)];
     
@@ -102,7 +104,6 @@
     dispatch_queue_t queue = dispatch_queue_create("luxi", NULL);
     [videoDataOutput setSampleBufferDelegate:self queue:queue];
     [_captureSession addOutput:videoDataOutput];
-    //[_captureSession startRunning];
     
     [self attachPreviewLayer];
     
@@ -113,6 +114,21 @@
     if (!_captureSession){
         return;
     }
+    
+    NSString *pos;
+    switch (position) {
+        case AVCaptureDevicePositionUnspecified:
+            pos = @"Unknown";
+            break;
+        case AVCaptureDevicePositionBack:
+            pos = @"Back";
+            break;
+        case AVCaptureDevicePositionFront:
+            pos = @"Front";
+            break;
+    }
+    
+    
     [_captureSession removeInput:_videoInput];
     [self setVideoInput:nil];
     [self initCamera:position];
@@ -124,11 +140,14 @@
 
 
 - (void) initCamera:(AVCaptureDevicePosition) position {
+    if (self.currentCameraPosition == position) {
+        return;
+    }
     
     AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession =
     [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
                                                            mediaType:AVMediaTypeVideo
-                                                            position:position];//AVCaptureDevicePositionBack];
+                                                            position:position];// AVCaptureDevicePositionBack];
     NSArray *devices = [captureDeviceDiscoverySession devices];
     
     for (AVCaptureDevice *device in devices) {
@@ -147,31 +166,26 @@
     [self setSightViewHidden: useFrontCamera];
     [self setCameraTapGestureRecognizerEnabled: (!useFrontCamera)];
     if (!useFrontCamera) {
-        
-        NSLog(@"-----------b/f----------");
-        NSLog(@"frame: (%f,%f), (%f,%f)", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
-        NSLog(@"sight origin: (%f,%f)", self.sightView.frame.origin.x, self.sightView.frame.origin.y);
-        NSLog(@"sight centre: (%f,%f)", self.sightView.center.x, self.sightView.center.y);
-        NSLog(@"sight frame: (%f,%f)", self.sightView.frame.size.width, self.sightView.frame.size.width);
-        
-        
-        self.sightView.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.sightView removeConstraints:self.sightView.constraints];
-        self.sightView.center = self.center; //  CGPointMake(0, 0);
-
-        
-        NSLog(@"-----------after----------");
-        NSLog(@"frame: (%f,%f), (%f,%f)", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
-        NSLog(@"sight origin: (%f,%f)", self.sightView.frame.origin.x, self.sightView.frame.origin.y);
-        NSLog(@"sight centre: (%f,%f)", self.sightView.center.x, self.sightView.center.y);
-        NSLog(@"sight frame: (%f,%f)", self.sightView.frame.size.width, self.sightView.frame.size.width);
-
-        
-        
-        
+        self.sightView.center = self.center;
     }
 }
 
+
+- (void)removeAllSightViewConstraints
+{
+    UIView *superview = self.sightView.superview;
+    while (superview != nil) {
+        for (NSLayoutConstraint *c in superview.constraints) {
+            if (c.firstItem == self.sightView || c.secondItem == self.sightView) {
+                [superview removeConstraint:c];
+            }
+        }
+        superview = superview.superview;
+    }
+    
+    [self.sightView removeConstraints:self.sightView.constraints];
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+}
 
 
 - (void)attachPreviewLayer {
