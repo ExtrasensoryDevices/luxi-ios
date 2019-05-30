@@ -7,11 +7,11 @@
 //  Copyright (c) 2013 Alina Kholcheva. All rights reserved.
 //
 
+#import <AVFoundation/AVFoundation.h>
+
 #import "MainViewController.h"
 
 #import "Settings.h"
-
-#import "UIDevice-Hardware.h"
 
 #import "OnboardingViewController.h"
 
@@ -48,8 +48,6 @@ enum Lockable{
 
 
 @property (atomic) enum AppState currentState;
-
-@property (nonatomic) BOOL isIPhone5orHigher;
 
 
 // ---------  LUXI ON view  ---------------- //
@@ -90,6 +88,8 @@ enum Lockable{
 
 @property (weak, nonatomic) IBOutlet CameraView *cameraContainerView;
 
+@property (weak, nonatomic) IBOutlet UILabel *permissionLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *ev100Lbl1;
 @property (weak, nonatomic) IBOutlet UILabel *evLbl1;
 @property (weak, nonatomic) IBOutlet UILabel *luxLbl1;
@@ -111,6 +111,7 @@ enum Lockable{
 
 // ---------  ROOT view  ---------------- //
 @property (weak, nonatomic) IBOutlet UIButton *buyLuxiBtn;
+@property (weak, nonatomic) IBOutlet UILabel  *helpLabel;
 @property (weak, nonatomic) IBOutlet UIButton *settingsBtn;
 @property (weak, nonatomic) IBOutlet UIButton *holdBtn;
 
@@ -171,6 +172,9 @@ enum Lockable{
 
 
 @implementation MainViewController
+
+
+BOOL _initialized = false;
 
 
 - (void)viewDidLoad
@@ -251,7 +255,8 @@ enum Lockable{
                               @"406.4",
                               @"430.5",
                               @"456.1",
-                              @"512", nil];
+                              @"512",
+                              nil];
     
     self.timePickerValues = [[NSArray alloc] initWithObjects:@"1/16000",
                               @"1/12000",
@@ -309,7 +314,8 @@ enum Lockable{
                               @"16",
                               @"20",
                               @"26",
-                              @"32", nil];
+                              @"32",
+                             nil];
     
     self.timePickerNumericValues = [[NSArray alloc] initWithObjects:
                                      @"6.25E-05",
@@ -368,7 +374,8 @@ enum Lockable{
                                      @"16",
                                      @"20",
                                      @"26",
-                                     @"32", nil];
+                                     @"32",
+                                    nil];
     
     self.isoPickerValues = [[NSArray alloc] initWithObjects:@"0.8",
                             @"1",
@@ -413,42 +420,125 @@ enum Lockable{
                             @"12800",
                             @"25600",
                             @"51200",
-                            @"102400", nil];
+                            @"102400",
+                            nil];
     
-    
-    self.isIPhone5orHigher = YES;
-    NSUInteger platformType = [[UIDevice currentDevice] platformType];
-    if (platformType == UIDevice4iPhone || platformType == UIDevice4SiPhone){
-        self.isIPhone5orHigher = NO;
-    }
     
     [self initBrightnessValues];
     
     [self initCalibrationSliders];
     
-    [self initCurrentState];
+    [self.permissionLabel setHidden: YES];
     
+    [self setupHelpButton];
+}
+
+-(void)setupHelpButton {
+    
+    UIColor *color = [UIColor colorWithRed:194.0/255.0 green:194.0/255.0 blue:194.0/255.0 alpha:1.0];
+    [self.helpLabel setTextColor:color];
+    [self.helpLabel.layer setBorderColor:color.CGColor];
+    [self.helpLabel.layer setCornerRadius:self.helpLabel.bounds.size.width/2];
+    [self.helpLabel.layer setBorderWidth:3];
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapHelpButton:)];
+    [self.helpLabel addGestureRecognizer:tapRecognizer];
+    [self.helpLabel setUserInteractionEnabled:YES];
 }
 
 -(void)initCurrentState
 {
-    if ([Settings userSettings].luxiModeOn){
-        self.currentState = AppStateLuxiOffMode; // detect if luxi is ON later
-        [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionFront];
-        
-    } else {
-        self.currentState = AppStateNoLuxiMode;
-        [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionBack];
+    
+    NSString *mediaType = AVMediaTypeVideo;
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+
+    switch (authStatus) {
+        case AVAuthorizationStatusAuthorized: {
+            if ([Settings userSettings].luxiModeOn){
+                self.currentState = AppStateLuxiOffMode; // detect if luxi is ON later
+                [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionFront];
+                
+            } else {
+                self.currentState = AppStateNoLuxiMode;
+                [self.cameraContainerView setupCaptureSession:AVCaptureDevicePositionBack];
+            }
+            [self updateUIPermissionGranted: YES];
+            break;
+        }
+        case AVAuthorizationStatusDenied:
+        case AVAuthorizationStatusRestricted: {
+            // denied
+            // restricted (parental control?), normally won't happen
+            UIAlertController *alert = [UIAlertController
+                                        alertControllerWithTitle: @"Luxi uses your device's front-facing camera as its light sensor."
+                                        message: @"Please allow Luxi to use the camera in the Settings app."
+                                        preferredStyle: UIAlertControllerStyleAlert];
+
+            UIAlertAction *cancelAction = [UIAlertAction
+                                           actionWithTitle:@"Cancel"
+                                           style:UIAlertActionStyleCancel
+                                           handler:nil];
+            
+            [alert addAction:cancelAction];
+            UIAlertAction *settingsAction = [UIAlertAction
+                                           actionWithTitle:@"Settings"
+                                           style:UIAlertActionStyleDefault
+                                           handler:^(UIAlertAction *action){
+                                               [self openSettings];
+                                           }];
+            
+            [alert addAction:settingsAction];
+            [self presentViewController: alert animated:YES completion:nil];
+
+            [self updateUIPermissionGranted: NO];
+            break;
+        }
+        case AVAuthorizationStatusNotDetermined: {
+            [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
+                if(granted){
+                    NSLog(@"Granted access to %@", mediaType);
+                } else {
+                    NSLog(@"Not granted access to %@", mediaType);
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self updateUIPermissionGranted: granted];
+                });
+            }];
+            break;
+        }
     }
 
+}
+
+-(void) updateUIPermissionGranted:(BOOL)granted
+{
+    [self.permissionLabel setHidden: granted];
+    
+    if (granted) {
+        for (UIGestureRecognizer *recognizer in self.permissionLabel.gestureRecognizers) {
+            [self.permissionLabel removeGestureRecognizer: recognizer];
+        }
+    } else if (self.permissionLabel.gestureRecognizers.count == 0) {
+        UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleNoCameraViewTap:)];
+        [self.permissionLabel addGestureRecognizer:tapRecognizer];
+        [self.permissionLabel setUserInteractionEnabled:YES];
+    }
+}
+
+-(void) openSettings
+{
+    [UIApplication.sharedApplication
+     openURL: [NSURL URLWithString: UIApplicationOpenSettingsURLString]
+     options:@{}
+     completionHandler:nil];
 }
 
 -(void) initBrightnessValues
 {
     // load default values
     NSNumber *savedFstop = [[Settings userSettings] fstop];
-    NSNumber *savedTime = [[Settings userSettings] time];
-    NSNumber *savedIso = [[Settings userSettings] iso];
+    NSNumber *savedTime  = [[Settings userSettings] time];
+    NSNumber *savedIso   = [[Settings userSettings] iso];
 
     if (savedFstop == nil && savedTime == nil && savedIso == nil) {
         self.fstopValueLocked = 2.8;
@@ -505,8 +595,11 @@ enum Lockable{
 
 -(void) initCalibrationSliders
 {
-    UIImage *thumb = [UIImage imageNamed:@"IndicatorBar"];
+    // Fix for the size of the thumb:
+    //     imageWithBorderFromImage inscreases the size and draws a border
+    UIImage *thumb = [self imageWithBorderFromImage:[UIImage imageNamed:@"IndicatorBar"]];
     UIImage *track = [UIImage imageNamed:@"SliderTrack"];
+    
     [self.evSlider setThumbImage:thumb forState:UIControlStateNormal];
     [self.evSlider setThumbImage:thumb forState:UIControlStateHighlighted];
     [self.evSlider setMinimumTrackImage: track forState: UIControlStateNormal];
@@ -527,6 +620,28 @@ enum Lockable{
         [self.luxSlider setValue:[savedCalibrationLux floatValue]];
     }
     [self updateCalibrationLabels];
+    
+}
+
+- (UIImage*)imageWithBorderFromImage:(UIImage*)source;
+{
+    CGSize oldSize = [source size];
+    CGSize size = CGSizeMake(oldSize.width*2, oldSize.height*1.2);
+    
+    UIGraphicsBeginImageContextWithOptions(size, true, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, UIColor.whiteColor.CGColor);
+    CGContextSetStrokeColorWithColor(context,UIColor.blackColor.CGColor);
+    CGContextSetLineWidth(context, 2.0);
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    CGContextFillRect(context, rect);
+    CGContextStrokeRect(context, rect);
+    
+    UIImage *testImg =  UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return testImg;
 }
 
 
@@ -541,6 +656,12 @@ enum Lockable{
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    
+    if (!_initialized) {
+        [self initCurrentState];
+        _initialized = true;
+    }
+    
     [self showOnboarding];
 
     [_cameraContainerView setDelegate:self];
@@ -553,8 +674,6 @@ enum Lockable{
     [self createShadowForPickerView];
     
     [super viewDidAppear:animated];
-    
-    
 }
 
 -(void) viewWillDisappear:(BOOL)animated
@@ -597,7 +716,7 @@ enum Lockable{
                           duration:0.2f
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:^{
-                            _onboardingViewController.view.alpha = 1.0f;
+                            self->_onboardingViewController.view.alpha = 1.0f;
                         } completion:nil];
         
         [Settings userSettings].showOnboarding = NO;
@@ -613,10 +732,10 @@ enum Lockable{
                           duration:0.2f
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:^{
-                            _onboardingViewController.view.alpha = 0.0f;
+                            self->_onboardingViewController.view.alpha = 0.0f;
                         } completion:^(BOOL finished){
-                            [_onboardingViewController removeFromParentViewController];
-                            [_onboardingViewController.view removeFromSuperview];
+                            [self->_onboardingViewController removeFromParentViewController];
+                            [self->_onboardingViewController.view removeFromSuperview];
                             self.onboardingViewController = nil;
                             [Settings userSettings].showOnboarding = NO;
                         }];
@@ -673,6 +792,13 @@ enum Lockable{
 
 
 #pragma mark - Gesture handling
+
+
+
+- (void)handleNoCameraViewTap:(UITapGestureRecognizer *)sender {
+    [self openSettings];
+}
+
 
 -(void) initLabelViewGestureRecognizers
 {
@@ -894,10 +1020,16 @@ enum Lockable{
         [UIView commitAnimations];
     }
 
-    
-    
-    
 }
+
+
+
+- (void)didTapHelpButton:(UITapGestureRecognizer *)sender{
+    NSURL *URL = [NSURL URLWithString: @"https://luxiforall.com/app-help"];
+    [UIApplication.sharedApplication openURL:URL options:@{} completionHandler:nil];
+}
+
+
 
 #pragma mark - Screen label setters
 
@@ -952,7 +1084,7 @@ int cnt;
 
 -(void) handleLuxiIsOn:(BOOL)isOn
 {
-    int threshold = self.isIPhone5orHigher ? 10 : 3;
+    int threshold = 10;
     if (isOn){
         if (self.currentState == AppStateLuxiOffMode){
             if (cnt == threshold){
@@ -1105,9 +1237,6 @@ int cnt;
                                       iso:nil];
         
     }
-//    [[Settings userSettings] setFstop:[NSNumber numberWithFloat:self.fstopValueLocked]
-//                                 time:[NSNumber numberWithFloat:self.timeValueLocked]
-//                                  iso:[NSNumber numberWithFloat:self.isoValueLocked]];
 }
 
 

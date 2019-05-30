@@ -59,28 +59,28 @@
 }
 */
 
-
+- (void)willMoveToWindow:(UIWindow *)newWindow {
+    [self.sightView removeConstraints:self.sightView.constraints];
+    self.sightView.translatesAutoresizingMaskIntoConstraints = NO;
+}
 
 -(void) setSightViewHidden:(BOOL)hidden
 {
     [_sightView setHidden:hidden];
 }
 
-
-
-
-
 - (void)setupCaptureSession:(AVCaptureDevicePosition) position
 {
-    
     [self initCamera:position];
-    [self updateUIUseFrontCamera:(position ==AVCaptureDevicePositionFront)];
+    [self updateUIUseFrontCamera:(position == AVCaptureDevicePositionFront)];
     
     if (!self.camera || !self.videoInput){
         // error - no cameras available
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Camera Unavailable" message:@"Unable to use camera" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle: @"Camera Unavailable" message:@"Unable to use camera" preferredStyle: UIAlertControllerStyleAlert];
         
+        [alert addAction: [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler: nil]];
+        UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+        [vc presentViewController:alert animated:YES completion:nil];
         return;
     }
     
@@ -104,7 +104,6 @@
     dispatch_queue_t queue = dispatch_queue_create("luxi", NULL);
     [videoDataOutput setSampleBufferDelegate:self queue:queue];
     [_captureSession addOutput:videoDataOutput];
-    //[_captureSession startRunning];
     
     [self attachPreviewLayer];
     
@@ -115,10 +114,25 @@
     if (!_captureSession){
         return;
     }
+    
+    NSString *pos;
+    switch (position) {
+        case AVCaptureDevicePositionUnspecified:
+            pos = @"Unknown";
+            break;
+        case AVCaptureDevicePositionBack:
+            pos = @"Back";
+            break;
+        case AVCaptureDevicePositionFront:
+            pos = @"Front";
+            break;
+    }
+    
+    
     [_captureSession removeInput:_videoInput];
     [self setVideoInput:nil];
     [self initCamera:position];
-    [self updateUIUseFrontCamera:(position ==AVCaptureDevicePositionFront)];
+    [self updateUIUseFrontCamera:(position == AVCaptureDevicePositionFront)];
     [_captureSession addInput:_videoInput];
 }
 
@@ -126,8 +140,16 @@
 
 
 - (void) initCamera:(AVCaptureDevicePosition) position {
+    if (self.currentCameraPosition == position) {
+        return;
+    }
     
-    NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession =
+    [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
+                                                           mediaType:AVMediaTypeVideo
+                                                            position:position];
+    NSArray *devices = [captureDeviceDiscoverySession devices];
+    
     for (AVCaptureDevice *device in devices) {
         if ([device position] == position) {
             self.camera = device;
@@ -144,31 +166,26 @@
     [self setSightViewHidden: useFrontCamera];
     [self setCameraTapGestureRecognizerEnabled: (!useFrontCamera)];
     if (!useFrontCamera) {
-        
-        NSLog(@"-----------b/f----------");
-        NSLog(@"frame: (%f,%f), (%f,%f)", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
-        NSLog(@"sight origin: (%f,%f)", self.sightView.frame.origin.x, self.sightView.frame.origin.y);
-        NSLog(@"sight centre: (%f,%f)", self.sightView.center.x, self.sightView.center.y);
-        NSLog(@"sight frame: (%f,%f)", self.sightView.frame.size.width, self.sightView.frame.size.width);
-        
-        
-        self.sightView.translatesAutoresizingMaskIntoConstraints = NO;
-        [self.sightView removeConstraints:self.sightView.constraints];
-        self.sightView.center = self.center; //  CGPointMake(0, 0);
-
-        
-        NSLog(@"-----------after----------");
-        NSLog(@"frame: (%f,%f), (%f,%f)", self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
-        NSLog(@"sight origin: (%f,%f)", self.sightView.frame.origin.x, self.sightView.frame.origin.y);
-        NSLog(@"sight centre: (%f,%f)", self.sightView.center.x, self.sightView.center.y);
-        NSLog(@"sight frame: (%f,%f)", self.sightView.frame.size.width, self.sightView.frame.size.width);
-
-        
-        
-        
+        self.sightView.center = self.center;
     }
 }
 
+
+- (void)removeAllSightViewConstraints
+{
+    UIView *superview = self.sightView.superview;
+    while (superview != nil) {
+        for (NSLayoutConstraint *c in superview.constraints) {
+            if (c.firstItem == self.sightView || c.secondItem == self.sightView) {
+                [superview removeConstraint:c];
+            }
+        }
+        superview = superview.superview;
+    }
+    
+    [self.sightView removeConstraints:self.sightView.constraints];
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+}
 
 
 - (void)attachPreviewLayer {

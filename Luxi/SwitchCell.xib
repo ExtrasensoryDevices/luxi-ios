@@ -1,8 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6246"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1mH-Ub-utT" id="Wgb-ZB-JOt">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoD-Qm-Z7r">
-                        <rect key="frame" x="20" y="10" width="210" height="24"/>
+                        <rect key="frame" x="20" y="10.5" width="210" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="210" id="9Gp-io-Mej"/>
                         </constraints>
@@ -24,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zrx-8g-HW6">
-                        <rect key="frame" x="251" y="6" width="51" height="31"/>
+                        <rect key="frame" x="251" y="7" width="51" height="31"/>
                     </switch>
                 </subviews>
                 <constraints>
@@ -34,15 +39,11 @@
                     <constraint firstItem="NoD-Qm-Z7r" firstAttribute="leading" secondItem="Wgb-ZB-JOt" secondAttribute="leading" constant="20" id="xgx-1g-vdJ"/>
                 </constraints>
             </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="0Ym-sk-HaP"/>
             <connections>
                 <outlet property="cellLabel" destination="NoD-Qm-Z7r" id="1uq-JM-4Rv"/>
                 <outlet property="cellSwitch" destination="Zrx-8g-HW6" id="bEO-oG-fBR"/>
             </connections>
         </tableViewCell>
     </objects>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

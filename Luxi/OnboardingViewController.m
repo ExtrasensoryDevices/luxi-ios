@@ -2,12 +2,12 @@
 //  OnboardingViewController.m
 //  Luxi
 //
-//  Created by Alina on 2014-07-01.
-//  Copyright (c) 2014 Owen Davis. All rights reserved.
+//  Created by Alina Kholcheva on 2014-07-01.
+//  Copyright (c) 2014 Alina Kholcheva. All rights reserved.
 //
 
 #import "OnboardingViewController.h"
-#import "UIDevice-Hardware.h"
+#import "ScreenSizeClass.h"
 
 @interface OnboardingViewController (){
     NSInteger _currentIndex;
@@ -35,19 +35,29 @@
 {
     [super viewDidLoad];
     
-    NSUInteger platformType = [[UIDevice currentDevice] platformType];
-    if (platformType == UIDevice4iPhone || platformType == UIDevice4SiPhone){ // iphone 4
-        if (self.luxiView){
-            _pageImages = @[@"Onboarding_iPhone4_LuxiOn_1", @"Onboarding_iPhone4_LuxiOn_2"];
-        } else {
-            _pageImages = @[@"Onboarding_iPhone4_LuxiOff_1", @"Onboarding_iPhone4_LuxiOff_2"];
-        }
-    } else if (platformType == UIDevice6iPhone) {
-        _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"];
-    } else {
-        _pageImages = @[@"Onboarding_1", @"Onboarding_2"];
+    // FIXME: ONBOARDING
+    
+    
+    switch (ScreenSizeClass.phoneSize) {
+        case ScreenSizePhone4inch:
+        case ScreenSizeIPad:
+            _pageImages = @[@"Onboarding_1", @"Onboarding_2"]; //5, 6+, 7+, 8+, iPad
+            break;
+            
+        case ScreenSizePhone5_5inch:
+            if (UIScreen.mainScreen.scale == 3) {
+                _pageImages = @[@"Onboarding_1", @"Onboarding_2"]; // xs max
+            } else {
+                _pageImages = @[@"Onboarding_iPhoneXR_1", @"Onboarding_iPhoneXR_2"]; // xr, NOt OK, MOVE 20px down
+            }
+            break;
+            
+        default:
+            //6, 7, 8, x, xs
+            //ScreenSizePhone4_7inch, ScreenSizePhone5_8inch, ScreenSizePhone6_5inch
+            _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"]; //6, 7, 8, x, xs
+            break;
     }
-
     
     _currentIndex = 0;
     [self updateImage];
@@ -74,7 +84,7 @@
                       duration:0.5f
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
-                        self.imageView.image = [UIImage imageNamed:self.pageImages[_currentIndex]];
+                        self.imageView.image = [UIImage imageNamed:self.pageImages[self->_currentIndex]];
                     } completion:NULL];
 }
 
