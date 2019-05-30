@@ -191,12 +191,12 @@
 				C7BF6AED1963CE9100E4E425 /* OnboardingViewController.m */,
 				C7160E5C180391E4007614EE /* LuxiDetector.h */,
 				C7160E5D180391E4007614EE /* LuxiDetector.m */,
+				C785D914229112A900E139D4 /* ScreenSizeClass.h */,
+				C785D9122291129C00E139D4 /* ScreenSizeClass.m */,
 				C77C6ACD1A37D2E5009B4358 /* HoldButton */,
 				C71CA47F1820CCE3009F4297 /* SwitchCell */,
 				C70911CC181EE52900F37153 /* MBProgressHUD */,
 				CCE4280E178B7C3A00CB3537 /* Supporting Files */,
-				C785D9122291129C00E139D4 /* ScreenSizeClass.m */,
-				C785D914229112A900E139D4 /* ScreenSizeClass.h */,
 			);
 			path = Luxi;
 			sourceTree = "<group>";
@@ -262,6 +262,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = CCE427FB178B7C3A00CB3537;

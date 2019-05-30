@@ -147,7 +147,7 @@
     AVCaptureDeviceDiscoverySession *captureDeviceDiscoverySession =
     [AVCaptureDeviceDiscoverySession discoverySessionWithDeviceTypes:@[AVCaptureDeviceTypeBuiltInWideAngleCamera]
                                                            mediaType:AVMediaTypeVideo
-                                                            position:position];// AVCaptureDevicePositionBack];
+                                                            position:position];
     NSArray *devices = [captureDeviceDiscoverySession devices];
     
     for (AVCaptureDevice *device in devices) {

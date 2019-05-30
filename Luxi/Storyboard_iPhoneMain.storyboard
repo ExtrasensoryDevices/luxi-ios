@@ -716,10 +716,10 @@ camera access.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JTd-25-2j1" firstAttribute="bottom" secondItem="cCM-Eh-TB0" secondAttribute="bottom" id="QGB-pw-ljp"/>
+                            <constraint firstAttribute="bottom" secondItem="cCM-Eh-TB0" secondAttribute="bottom" id="QGB-pw-ljp"/>
                             <constraint firstItem="cCM-Eh-TB0" firstAttribute="top" secondItem="fMu-Jr-F2h" secondAttribute="top" id="hMt-sQ-MhE"/>
-                            <constraint firstItem="cCM-Eh-TB0" firstAttribute="leading" secondItem="JTd-25-2j1" secondAttribute="leading" id="im1-DX-vBC"/>
-                            <constraint firstItem="JTd-25-2j1" firstAttribute="trailing" secondItem="cCM-Eh-TB0" secondAttribute="trailing" id="jOc-m9-3QE"/>
+                            <constraint firstItem="cCM-Eh-TB0" firstAttribute="leading" secondItem="fMu-Jr-F2h" secondAttribute="leading" id="im1-DX-vBC"/>
+                            <constraint firstAttribute="trailing" secondItem="cCM-Eh-TB0" secondAttribute="trailing" id="jOc-m9-3QE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JTd-25-2j1"/>
                     </view>

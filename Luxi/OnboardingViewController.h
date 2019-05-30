@@ -2,8 +2,8 @@
 //  OnboardingViewController.h
 //  Luxi
 //
-//  Created by Alina on 2014-07-01.
-//  Copyright (c) 2014 Owen Davis. All rights reserved.
+//  Created by Alina Kholcheva on 2014-07-01.
+//  Copyright (c) 2014 Alina Kholcheva. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
