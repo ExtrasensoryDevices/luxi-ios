@@ -75,9 +75,11 @@ camera access.</string>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ii-j8-IEv" userLabel="View - Luxi">
                                 <rect key="frame" x="0.0" y="171" width="768" height="545"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEo-bC-YpY" userLabel="Button - Default">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEo-bC-YpY" userLabel="Button - Default">
                                         <rect key="frame" x="269" y="410" width="230" height="90"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="3hv-vt-lw4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" image="DefaultBtn">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,61 +88,78 @@ camera access.</string>
                                             <action selector="defaultButtonClicked:" destination="A3Y-ic-AHW" eventType="touchUpInside" id="a8A-Ma-wyl"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CALIBRATE EV" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULG-qP-dY6">
-                                        <rect key="frame" x="60" y="22" width="290" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIBRATE EV" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULG-qP-dY6">
+                                        <rect key="frame" x="59" y="13" width="252.5" height="52"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="38"/>
                                         <color key="textColor" red="0.43470591306686401" green="0.43469288945198059" blue="0.43470031023025513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CALIBRATE LUX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6N4-HA-qm6">
-                                        <rect key="frame" x="60" y="216" width="290" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ev Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llk-Cf-IL9" userLabel="Label - Calibrate EV Value Label">
+                                        <rect key="frame" x="565" y="13" width="144" height="52"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="38"/>
-                                        <color key="textColor" red="0.43470591306686401" green="0.43469288945198059" blue="0.43470031023025513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calibrate" translatesAutoresizingMaskIntoConstraints="NO" id="OiC-EU-a4Q">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calibrate" translatesAutoresizingMaskIntoConstraints="NO" id="OiC-EU-a4Q" userLabel="Img calibrate EV">
                                         <rect key="frame" x="59" y="64" width="650" height="105"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-3" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="ga4-fx-J9q" userLabel="Horizontal Slider - EV">
-                                        <rect key="frame" x="59" y="64" width="650" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-3" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="ga4-fx-J9q" userLabel="Horizontal Slider - EV">
+                                        <rect key="frame" x="57" y="101.5" width="654" height="31"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="calibrationSliderValueChanged:" destination="A3Y-ic-AHW" eventType="valueChanged" id="m9n-xU-7xk"/>
                                         </connections>
                                     </slider>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calibrate" translatesAutoresizingMaskIntoConstraints="NO" id="xsd-T0-Vz0">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calibrate" translatesAutoresizingMaskIntoConstraints="NO" id="xsd-T0-Vz0" userLabel="Img calibrate LUX">
                                         <rect key="frame" x="59" y="259" width="650" height="105"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <slider opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="kam-Ac-iGV" userLabel="Horizontal Slider - LUX">
-                                        <rect key="frame" x="58" y="259" width="653" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIBRATE LUX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6N4-HA-qm6">
+                                        <rect key="frame" x="59" y="208" width="276" height="52"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="38"/>
+                                        <color key="textColor" red="0.43470591306686401" green="0.43469288945198059" blue="0.43470031023025513" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="kam-Ac-iGV" userLabel="Horizontal Slider - LUX">
+                                        <rect key="frame" x="57" y="296.5" width="654" height="31"/>
                                         <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="calibrationSliderValueChanged:" destination="A3Y-ic-AHW" eventType="valueChanged" id="2OB-6u-2sP"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ev Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llk-Cf-IL9" userLabel="Label - Calibrate EV Value Label">
-                                        <rect key="frame" x="539" y="22" width="170" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="38"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lux Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leh-ee-8xz" userLabel="Label - Calibrate LUX Value Label">
-                                        <rect key="frame" x="539" y="216" width="170" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lux Value" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Leh-ee-8xz" userLabel="Label - Calibrate LUX Value Label">
+                                        <rect key="frame" x="547.5" y="208" width="161.5" height="52"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="38"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Leh-ee-8xz" firstAttribute="trailing" secondItem="xsd-T0-Vz0" secondAttribute="trailing" id="0Oj-Bt-ckX"/>
+                                    <constraint firstItem="OiC-EU-a4Q" firstAttribute="top" secondItem="0ii-j8-IEv" secondAttribute="top" constant="64" id="22a-fa-Sxz"/>
+                                    <constraint firstItem="ga4-fx-J9q" firstAttribute="centerX" secondItem="OiC-EU-a4Q" secondAttribute="centerX" id="3ZU-mk-EUC"/>
+                                    <constraint firstItem="xsd-T0-Vz0" firstAttribute="leading" secondItem="0ii-j8-IEv" secondAttribute="leading" constant="59" id="4jn-O2-tCI"/>
+                                    <constraint firstItem="6N4-HA-qm6" firstAttribute="leading" secondItem="xsd-T0-Vz0" secondAttribute="leading" id="4t4-FR-KxF"/>
+                                    <constraint firstItem="ga4-fx-J9q" firstAttribute="width" secondItem="OiC-EU-a4Q" secondAttribute="width" id="Ha4-9C-Xir"/>
+                                    <constraint firstItem="xsd-T0-Vz0" firstAttribute="top" secondItem="OiC-EU-a4Q" secondAttribute="bottom" constant="90" id="PYz-Ea-H2l"/>
+                                    <constraint firstItem="kam-Ac-iGV" firstAttribute="width" secondItem="xsd-T0-Vz0" secondAttribute="width" id="Qcv-lM-gWa"/>
+                                    <constraint firstAttribute="bottom" secondItem="YEo-bC-YpY" secondAttribute="bottom" constant="45" id="Rw8-HK-rmB"/>
+                                    <constraint firstItem="YEo-bC-YpY" firstAttribute="centerX" secondItem="0ii-j8-IEv" secondAttribute="centerX" id="YbR-Pg-WZh"/>
+                                    <constraint firstItem="ga4-fx-J9q" firstAttribute="centerY" secondItem="OiC-EU-a4Q" secondAttribute="centerY" id="aBU-Fg-Izd"/>
+                                    <constraint firstItem="kam-Ac-iGV" firstAttribute="centerX" secondItem="xsd-T0-Vz0" secondAttribute="centerX" id="bgU-1g-LKG"/>
+                                    <constraint firstItem="llk-Cf-IL9" firstAttribute="trailing" secondItem="OiC-EU-a4Q" secondAttribute="trailing" id="by3-ja-jUa"/>
+                                    <constraint firstItem="llk-Cf-IL9" firstAttribute="bottom" secondItem="OiC-EU-a4Q" secondAttribute="top" constant="1" id="c0w-xV-QL7"/>
+                                    <constraint firstItem="OiC-EU-a4Q" firstAttribute="leading" secondItem="0ii-j8-IEv" secondAttribute="leading" constant="59" id="j0F-GF-a03"/>
+                                    <constraint firstAttribute="trailing" secondItem="xsd-T0-Vz0" secondAttribute="trailing" constant="59" id="mgK-PI-tpC"/>
+                                    <constraint firstAttribute="trailing" secondItem="OiC-EU-a4Q" secondAttribute="trailing" constant="59" id="nrk-U8-a7f"/>
+                                    <constraint firstItem="kam-Ac-iGV" firstAttribute="centerY" secondItem="xsd-T0-Vz0" secondAttribute="centerY" id="q6c-6V-1FU"/>
+                                    <constraint firstItem="6N4-HA-qm6" firstAttribute="bottom" secondItem="xsd-T0-Vz0" secondAttribute="top" constant="1" id="rAz-6J-LpG"/>
+                                    <constraint firstItem="Leh-ee-8xz" firstAttribute="bottom" secondItem="xsd-T0-Vz0" secondAttribute="top" constant="1" id="rGI-VE-uX9"/>
+                                    <constraint firstItem="YEo-bC-YpY" firstAttribute="top" secondItem="xsd-T0-Vz0" secondAttribute="bottom" constant="46" id="vqh-2s-y0J"/>
+                                    <constraint firstItem="ULG-qP-dY6" firstAttribute="leading" secondItem="OiC-EU-a4Q" secondAttribute="leading" id="wDH-0V-fBB"/>
+                                    <constraint firstItem="ULG-qP-dY6" firstAttribute="bottom" secondItem="OiC-EU-a4Q" secondAttribute="top" constant="1" id="wG8-bq-ooJ"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8H-1B-BXC" userLabel="Button - Settings">
                                 <rect key="frame" x="704" y="45" width="44" height="44"/>
@@ -464,30 +483,27 @@ camera access.</string>
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatusBarBgr" translatesAutoresizingMaskIntoConstraints="NO" id="ByX-Wb-Pv4" userLabel="Image View - Status Bar bgr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatusBarBgr" translatesAutoresizingMaskIntoConstraints="NO" id="Dsd-UG-W8v" userLabel="Image View - StatusBar bgr">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVb-CQ-Ycc">
-                                <rect key="frame" x="0.0" y="20" width="768" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="AN6-xw-V3w"/>
-                                </constraints>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayP-Q1-wef">
+                                <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="0.0"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Buy Luxi" id="8s1-Xa-CEA">
-                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="FOj-Qy-Acu">
+                                    <navigationItem title="Buy Luxi" id="pXE-4p-VxG">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="uhs-UI-t9T">
                                             <connections>
-                                                <action selector="dismiss" destination="Spl-vd-e5b" id="ZYE-T1-Rse"/>
+                                                <action selector="dismiss" destination="Spl-vd-e5b" id="OtK-Y4-Hnl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIz-Tj-BkE">
-                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <rect key="frame" x="0.0" y="70" width="768" height="954"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="Spl-vd-e5b" id="S08-Hp-m5h"/>
@@ -496,12 +512,12 @@ camera access.</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="IIz-Tj-BkE" firstAttribute="top" secondItem="eVb-CQ-Ycc" secondAttribute="bottom" id="Gjz-j9-a0G"/>
+                            <constraint firstItem="ayP-Q1-wef" firstAttribute="trailing" secondItem="h46-Am-Ry1" secondAttribute="trailing" id="2bu-Ta-dL0"/>
                             <constraint firstItem="IIz-Tj-BkE" firstAttribute="leading" secondItem="h46-Am-Ry1" secondAttribute="leading" id="HJJ-Ud-48c"/>
-                            <constraint firstItem="h46-Am-Ry1" firstAttribute="trailing" secondItem="eVb-CQ-Ycc" secondAttribute="trailing" id="X7P-CC-dbH"/>
+                            <constraint firstItem="IIz-Tj-BkE" firstAttribute="top" secondItem="ayP-Q1-wef" secondAttribute="bottom" id="Ocb-za-Esm"/>
+                            <constraint firstItem="ayP-Q1-wef" firstAttribute="leading" secondItem="h46-Am-Ry1" secondAttribute="leading" id="Qys-Mm-XZr"/>
+                            <constraint firstItem="ayP-Q1-wef" firstAttribute="top" secondItem="h46-Am-Ry1" secondAttribute="top" id="Ye5-lp-Zrg"/>
                             <constraint firstItem="h46-Am-Ry1" firstAttribute="trailing" secondItem="IIz-Tj-BkE" secondAttribute="trailing" id="aJk-qA-IOh"/>
-                            <constraint firstItem="eVb-CQ-Ycc" firstAttribute="top" secondItem="h46-Am-Ry1" secondAttribute="top" id="lDW-hH-iCk"/>
-                            <constraint firstItem="eVb-CQ-Ycc" firstAttribute="leading" secondItem="h46-Am-Ry1" secondAttribute="leading" id="wxO-n7-i2m"/>
                             <constraint firstItem="h46-Am-Ry1" firstAttribute="bottom" secondItem="IIz-Tj-BkE" secondAttribute="bottom" id="xG2-J4-0j1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h46-Am-Ry1"/>
@@ -522,30 +538,30 @@ camera access.</string>
             <objects>
                 <viewController id="91y-dW-8Pe" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RYX-UF-oUj">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="974"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatusBarBgr" translatesAutoresizingMaskIntoConstraints="NO" id="jxi-Cl-Fym" userLabel="Image View - StatusBar bgr">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-4t-xF1">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBr-YD-OBh">
                                 <rect key="frame" x="0.0" y="20" width="768" height="50"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="0.0"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Settings" id="DAQ-bl-4gg">
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="QCm-A4-qv8">
+                                    <navigationItem title="Settings" id="UMv-R2-w8F">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="9cO-nj-Kdz">
                                             <connections>
-                                                <action selector="doneButtonClicked:" destination="91y-dW-8Pe" id="4qm-ms-qyB"/>
+                                                <action selector="doneButtonClicked:" destination="91y-dW-8Pe" id="oY3-8w-Voe"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="StatusBarBgr" translatesAutoresizingMaskIntoConstraints="NO" id="jxi-Cl-Fym" userLabel="Image View - StatusBar bgr">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="5of-ei-GxW">
-                                <rect key="frame" x="0.0" y="70" width="768" height="954"/>
+                                <rect key="frame" x="0.0" y="70" width="768" height="904"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <sections/>
                                 <connections>
@@ -556,19 +572,19 @@ camera access.</string>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Bzi-Tg-zHx" firstAttribute="trailing" secondItem="JZk-4t-xF1" secondAttribute="trailing" id="1fk-NV-ReF"/>
+                            <constraint firstItem="nBr-YD-OBh" firstAttribute="leading" secondItem="Bzi-Tg-zHx" secondAttribute="leading" id="Bfh-kT-RDn"/>
                             <constraint firstItem="5of-ei-GxW" firstAttribute="leading" secondItem="Bzi-Tg-zHx" secondAttribute="leading" id="F62-Mm-0LC"/>
-                            <constraint firstItem="5of-ei-GxW" firstAttribute="top" secondItem="JZk-4t-xF1" secondAttribute="bottom" id="Siv-hz-ZYT"/>
+                            <constraint firstItem="nBr-YD-OBh" firstAttribute="trailing" secondItem="Bzi-Tg-zHx" secondAttribute="trailing" id="IN4-Ek-2fT"/>
                             <constraint firstItem="Bzi-Tg-zHx" firstAttribute="bottom" secondItem="5of-ei-GxW" secondAttribute="bottom" id="TR4-sG-CgJ"/>
-                            <constraint firstItem="JZk-4t-xF1" firstAttribute="leading" secondItem="Bzi-Tg-zHx" secondAttribute="leading" id="cFH-Hg-XTA"/>
-                            <constraint firstItem="JZk-4t-xF1" firstAttribute="top" secondItem="Bzi-Tg-zHx" secondAttribute="top" id="e9B-oB-ObW"/>
+                            <constraint firstItem="nBr-YD-OBh" firstAttribute="top" secondItem="Bzi-Tg-zHx" secondAttribute="top" id="bzb-zY-nKh"/>
                             <constraint firstItem="Bzi-Tg-zHx" firstAttribute="trailing" secondItem="5of-ei-GxW" secondAttribute="trailing" id="iDB-0c-0wJ"/>
+                            <constraint firstItem="5of-ei-GxW" firstAttribute="top" secondItem="nBr-YD-OBh" secondAttribute="bottom" id="qpv-Rn-eyT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bzi-Tg-zHx"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="uhW-RB-E52"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="5of-ei-GxW" id="mge-uw-wMb"/>
                     </connections>

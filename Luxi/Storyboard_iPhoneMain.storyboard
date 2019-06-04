@@ -844,7 +844,6 @@ camera access.</string>
                         <viewLayoutGuide key="safeArea" id="6e3-Al-F5i"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="uhW-RB-E52"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="5of-ei-GxW" id="mge-uw-wMb"/>

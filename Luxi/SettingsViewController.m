@@ -47,13 +47,6 @@ static NSString *SwitchCellNibName = @"SwitchCell";
 }
 
 
-
-- (IBAction)cancelButtonClicked:(id)sender {
-    if (self.settingsViewDelegate){
-        [self.settingsViewDelegate luxiModeDidChange:NO];
-    }
-}
-
 - (IBAction)doneButtonClicked:(id)sender {
     if (self.settingsViewDelegate){
         
@@ -137,8 +130,11 @@ static NSString *SwitchCellNibName = @"SwitchCell";
             [_footer setDataDetectorTypes:UIDataDetectorTypeLink];
             [_footer setBackgroundColor:[UIColor clearColor]];
             
-            NSString *text = [NSString stringWithFormat:@"Version %@",[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
-            text = [text stringByAppendingFormat:@"\nhttp://www.luximeter.com"];
+            NSString *shortVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+            NSString *buildVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+            
+            NSString *text = [NSString stringWithFormat:@"Version %@ (%@)",shortVersionString, buildVersionString];
+            text = [text stringByAppendingFormat:@"\nhttps://www.luxiforall.com"];
             [_footer setText:text];
         }
         
