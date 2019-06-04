@@ -24,7 +24,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *statusBarBgr;
 - (IBAction)doneButtonClicked:(id)sender;
 
 @end

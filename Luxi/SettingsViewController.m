@@ -33,14 +33,6 @@ static NSString *SwitchCellNibName = @"SwitchCell";
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:SwitchCellNibName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:SwitchCellReuseId];
-    
-    NSString *ver = [[UIDevice currentDevice] systemVersion];
-    float ver_float = [ver floatValue];
-    if (ver_float < 7.0){
-        [self.statusBarBgr removeFromSuperview];
-    }
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated

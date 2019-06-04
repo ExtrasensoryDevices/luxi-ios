@@ -21,7 +21,6 @@
 @property (weak, nonatomic) id<WebViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webview;
-@property (weak, nonatomic) IBOutlet UIImageView *statusBarBgr;
 
 -(IBAction)dismiss;
 

@@ -143,10 +143,10 @@ camera access.</string>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8H-1B-BXC" userLabel="Button - Settings">
-                                <rect key="frame" x="714" y="45" width="34" height="31"/>
+                                <rect key="frame" x="704" y="45" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="GtT-Fs-UTf"/>
-                                    <constraint firstAttribute="height" constant="31" id="N3s-ra-lNH"/>
+                                    <constraint firstAttribute="width" constant="44" id="GtT-Fs-UTf"/>
+                                    <constraint firstAttribute="width" secondItem="R8H-1B-BXC" secondAttribute="height" multiplier="1:1" id="ZUw-Mt-kpj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="Settings">
@@ -339,11 +339,11 @@ camera access.</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0us-HX-ToU">
-                                <rect key="frame" x="684" y="52" width="23" height="23"/>
+                                <rect key="frame" x="657" y="54" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="J1P-uj-icB"/>
+                                    <constraint firstAttribute="height" constant="35" id="J1P-uj-icB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -367,9 +367,9 @@ camera access.</string>
                             <constraint firstItem="d5f-ow-yuI" firstAttribute="leading" secondItem="aPa-Or-OBu" secondAttribute="leading" id="SAp-Bw-7X4"/>
                             <constraint firstItem="Y6x-Tq-Amx" firstAttribute="top" secondItem="mC4-4C-NND" secondAttribute="bottom" id="UXT-01-F8U"/>
                             <constraint firstItem="0ii-j8-IEv" firstAttribute="top" secondItem="Z6b-OH-XGL" secondAttribute="bottom" constant="1" id="WFa-UB-80o"/>
-                            <constraint firstItem="R8H-1B-BXC" firstAttribute="leading" secondItem="0us-HX-ToU" secondAttribute="trailing" constant="7" id="YBm-IW-UZB"/>
+                            <constraint firstItem="R8H-1B-BXC" firstAttribute="leading" secondItem="0us-HX-ToU" secondAttribute="trailing" constant="12" id="YBm-IW-UZB"/>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="bottom" secondItem="2qw-81-sze" secondAttribute="bottom" constant="-258" id="Zan-qx-ueg"/>
-                            <constraint firstItem="0us-HX-ToU" firstAttribute="top" secondItem="R8H-1B-BXC" secondAttribute="top" constant="7" id="aBK-1U-ErI"/>
+                            <constraint firstItem="0us-HX-ToU" firstAttribute="top" secondItem="R8H-1B-BXC" secondAttribute="top" constant="9" id="aBK-1U-ErI"/>
                             <constraint firstItem="wQf-os-fSl" firstAttribute="leading" secondItem="aPa-Or-OBu" secondAttribute="leading" id="atg-iY-0fj"/>
                             <constraint firstItem="Y6x-Tq-Amx" firstAttribute="top" secondItem="9Xe-e0-hmz" secondAttribute="bottom" constant="-100" id="b1P-XW-ynQ"/>
                             <constraint firstItem="wQf-os-fSl" firstAttribute="top" secondItem="Y6x-Tq-Amx" secondAttribute="bottom" id="b5j-CB-s9v"/>
@@ -402,6 +402,7 @@ camera access.</string>
                         <outlet property="fstopLbl1" destination="LiJ-yK-lTe" id="buy-ac-Icf"/>
                         <outlet property="fstopLockImg1" destination="0Dj-WO-lbn" id="LbC-nw-QMz"/>
                         <outlet property="fstopView1" destination="M4q-wt-ft7" id="48i-RE-HgO"/>
+                        <outlet property="helpLabel" destination="0us-HX-ToU" id="7qa-BY-nXL"/>
                         <outlet property="holdBtn" destination="wQf-os-fSl" id="g6P-qd-O94"/>
                         <outlet property="isoLbl1" destination="5A8-Kx-OKh" id="wt8-m7-dwl"/>
                         <outlet property="isoLockImg1" destination="sYJ-mB-PK9" id="YJp-hc-QFq"/>
@@ -509,7 +510,6 @@ camera access.</string>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="statusBarBgr" destination="ByX-Wb-Pv4" id="MZz-4i-oLs"/>
                         <outlet property="webview" destination="IIz-Tj-BkE" id="0ND-pm-5Nv"/>
                     </connections>
                 </viewController>
@@ -570,7 +570,6 @@ camera access.</string>
                     <navigationItem key="navigationItem" id="uhW-RB-E52"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="statusBarBgr" destination="jxi-Cl-Fym" id="ssb-cK-cpM"/>
                         <outlet property="tableView" destination="5of-ei-GxW" id="mge-uw-wMb"/>
                     </connections>
                 </viewController>
