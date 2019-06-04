@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 
+typedef enum : NSUInteger {
+    WebViewDestinationBuyLuxi,
+    WebViewDestinationShowHelp,
+} WebViewDestination;
+
 
 @protocol WebViewDelegate <NSObject, UIWebViewDelegate>
 - (void)closeWebView;
@@ -21,6 +26,8 @@
 @property (weak, nonatomic) id<WebViewDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIWebView *webview;
+
+@property (nonatomic) WebViewDestination webViewDestination;
 
 -(IBAction)dismiss;
 

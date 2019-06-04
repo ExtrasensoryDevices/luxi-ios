@@ -9,10 +9,13 @@
 #import "WebBrowserViewController.h"
 
 @interface WebBrowserViewController ()
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @end
 
 @implementation WebBrowserViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,12 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    NSURL *url = [NSURL URLWithString:@"https://luxiforall.com/buy-now"]; //@"http://luxiforall.com/buy-now
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [_webview loadRequest:request];
-    
+
 }
 
 
@@ -41,6 +39,22 @@
     
     MBProgressHUD *theHUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     theHUD.userInteractionEnabled = NO;
+    
+    // Do any additional setup after loading the view.
+    NSURL *url;
+    if (self.webViewDestination == WebViewDestinationBuyLuxi) {
+        url = [NSURL URLWithString:@"https://luxiforall.com/buy-now"];
+        self.navBar.topItem.title = @"Buy Now";
+    } else if (self.webViewDestination == WebViewDestinationShowHelp) {
+        url = [NSURL URLWithString:@"https://luxiforall.com/app-help"];
+        self.navBar.topItem.title = @"Help";
+    } else {
+        return;
+    }
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [_webview loadRequest:request];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,8 +62,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
@@ -75,7 +87,7 @@
 
 
 -(IBAction)dismiss{
-    if (self.delegate){
+    if (self.delegate != nil){
         [self.delegate closeWebView];
     }
     

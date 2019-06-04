@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A3Y-ic-AHW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A3Y-ic-AHW">
     <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,7 +34,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Spl-vd-e5b" kind="modal" identifier="goToWebView" id="sxM-ij-h0I"/>
+                                    <segue destination="Spl-vd-e5b" kind="presentation" identifier="buyLuxi" id="oh7-uI-DoJ"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxo-Xj-SNZ" userLabel="View - NoLuxi">
@@ -172,7 +172,7 @@ camera access.</string>
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="91y-dW-8Pe" kind="modal" identifier="goToSettingsView" id="Pns-2Q-rdO"/>
+                                    <segue destination="91y-dW-8Pe" kind="presentation" identifier="goToSettingsView" id="Pns-2Q-rdO"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mC4-4C-NND" userLabel="View - EV &amp; LUX labels">
@@ -440,11 +440,12 @@ camera access.</string>
                         <outlet property="timeLbl1" destination="OFH-Qa-TnH" id="9uj-7l-3yJ"/>
                         <outlet property="timeLockImg1" destination="iQ3-dw-UnX" id="vsz-cf-cnK"/>
                         <outlet property="timeView1" destination="cwM-0q-a23" id="SfT-Wv-vFT"/>
+                        <segue destination="Spl-vd-e5b" kind="presentation" identifier="showHelp" id="nXN-PA-3IF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVk-Og-580" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="200.78125" y="-21.09375"/>
+            <point key="canvasLocation" x="156.8603515625" y="-12.359619140625"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="asv-N6-sxR">
@@ -473,7 +474,7 @@ camera access.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwr-Vq-zK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982.03125" y="-866.015625"/>
+            <point key="canvasLocation" x="937" y="-742"/>
         </scene>
         <!--Web Browser View Controller-->
         <scene sceneID="Cvj-bG-8c0">
@@ -526,12 +527,13 @@ camera access.</string>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navBar" destination="ayP-Q1-wef" id="cUM-ur-Qub"/>
                         <outlet property="webview" destination="IIz-Tj-BkE" id="0ND-pm-5Nv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4C-Aw-SWY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982.03125" y="-205.6640625"/>
+            <point key="canvasLocation" x="972" y="-61"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="Wmo-Su-BSs">
@@ -591,7 +593,7 @@ camera access.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDX-ER-q8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982.03125" y="485.15624999999994"/>
+            <point key="canvasLocation" x="1057" y="720"/>
         </scene>
     </scenes>
     <resources>
@@ -607,4 +609,7 @@ camera access.</string>
         <image name="calibrate" width="650" height="105"/>
         <image name="locked" width="17" height="17"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oh7-uI-DoJ"/>
+    </inferredMetricsTieBreakers>
 </document>

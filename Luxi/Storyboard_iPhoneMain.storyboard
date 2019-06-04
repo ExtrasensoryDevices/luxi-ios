@@ -41,7 +41,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Spl-vd-e5b" kind="presentation" identifier="goToWebView" id="sxM-ij-h0I"/>
+                                    <segue destination="Spl-vd-e5b" kind="presentation" identifier="buyLuxi" id="99J-uL-D8M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8H-1B-BXC" userLabel="Button - Settings">
@@ -696,11 +696,12 @@ camera access.</string>
                         <outlet property="timeLbl1" destination="OFH-Qa-TnH" id="9uj-7l-3yJ"/>
                         <outlet property="timeLockImg1" destination="iQ3-dw-UnX" id="vsz-cf-cnK"/>
                         <outlet property="timeView1" destination="cwM-0q-a23" id="SfT-Wv-vFT"/>
+                        <segue destination="Spl-vd-e5b" kind="presentation" identifier="showHelp" id="Lbs-VT-mw9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVk-Og-580" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199.19999999999999" y="-22.03898050974513"/>
+            <point key="canvasLocation" x="190" y="-64"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="asv-N6-sxR">
@@ -784,6 +785,7 @@ camera access.</string>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navBar" destination="SeJ-df-yf6" id="2lu-z2-sFW"/>
                         <outlet property="webview" destination="IIz-Tj-BkE" id="0ND-pm-5Nv"/>
                     </connections>
                 </viewController>
@@ -868,4 +870,7 @@ camera access.</string>
         <image name="calibrate" width="541" height="80"/>
         <image name="locked" width="17" height="17"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="99J-uL-D8M"/>
+    </inferredMetricsTieBreakers>
 </document>

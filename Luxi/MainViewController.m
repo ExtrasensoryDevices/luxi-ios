@@ -960,8 +960,16 @@ BOOL _initialized = false;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"goToWebView"])  {
-        ((WebBrowserViewController*)[segue destinationViewController]).delegate = self;
+    if ([[segue identifier] isEqualToString:@"showHelp"])  {
+        WebBrowserViewController* webVC = (WebBrowserViewController*)[segue destinationViewController];
+        webVC.delegate = self;
+        webVC.webViewDestination = WebViewDestinationShowHelp;
+        
+    } else if ([[segue identifier] isEqualToString:@"buyLuxi"] )  {
+        WebBrowserViewController* webVC = (WebBrowserViewController*)[segue destinationViewController];
+        webVC.delegate = self;
+        webVC.webViewDestination = WebViewDestinationBuyLuxi;
+        
     } else if ([[segue identifier] isEqualToString:@"goToSettingsView"])  {
         ((SettingsViewController*)[segue destinationViewController]).settingsViewDelegate = self;
     }
@@ -1025,8 +1033,7 @@ BOOL _initialized = false;
 
 
 - (void)didTapHelpButton:(UITapGestureRecognizer *)sender{
-    NSURL *URL = [NSURL URLWithString: @"https://luxiforall.com/app-help"];
-    [UIApplication.sharedApplication openURL:URL options:@{} completionHandler:nil];
+    [self performSegueWithIdentifier:@"showHelp" sender:self];
 }
 
 
