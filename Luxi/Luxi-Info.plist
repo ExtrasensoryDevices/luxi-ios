@@ -19,13 +19,13 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2.0.2</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Luxi uses the device's camera as its light sensor.</string>
+	<string>Luxi uses the device&apos;s camera as its light sensor.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Segan-Light.ttf</string>
