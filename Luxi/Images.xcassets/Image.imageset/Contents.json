@@ -6,21 +6,13 @@
     },
     {
       "idiom" : "iphone",
-      "filename" : "BuyLuxi.png",
+      "filename" : "no_luxi_button_5@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "iphone",
+      "filename" : "no_luxi_button_5@2x-1.png",
       "scale" : "3x"
-    },
-    {
-      "idiom" : "ipad",
-      "filename" : "BuyLuxi_iPad.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "ipad",
-      "scale" : "2x"
     }
   ],
   "info" : {

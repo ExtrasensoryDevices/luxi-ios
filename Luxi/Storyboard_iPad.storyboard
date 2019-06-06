@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6b-OH-XGL" userLabel="Button - buyLuxiBtn">
-                                <rect key="frame" x="0.0" y="20" width="768" height="150"/>
+                                <rect key="frame" x="20" y="20" width="334" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="c23-FP-evz"/>
                                 </constraints>
@@ -369,6 +369,7 @@ camera access.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="d5f-ow-yuI" firstAttribute="leading" secondItem="Z6b-OH-XGL" secondAttribute="trailing" constant="-354" id="1Bd-cZ-L2G"/>
                             <constraint firstItem="mC4-4C-NND" firstAttribute="top" secondItem="0ii-j8-IEv" secondAttribute="bottom" constant="8" id="47v-R1-lmy"/>
                             <constraint firstItem="0us-HX-ToU" firstAttribute="width" secondItem="0us-HX-ToU" secondAttribute="height" multiplier="1:1" id="6Og-lW-NSI"/>
                             <constraint firstItem="0ii-j8-IEv" firstAttribute="leading" secondItem="aPa-Or-OBu" secondAttribute="leading" id="8WZ-sB-1h0"/>
@@ -378,11 +379,10 @@ camera access.</string>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="trailing" secondItem="R8H-1B-BXC" secondAttribute="trailing" constant="20" id="CwI-Sy-I4k"/>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="centerX" secondItem="cwM-0q-a23" secondAttribute="centerX" id="Cwc-AZ-pt4"/>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="trailing" secondItem="2qw-81-sze" secondAttribute="trailing" id="DCd-lN-b4c"/>
-                            <constraint firstItem="aPa-Or-OBu" firstAttribute="trailing" secondItem="Z6b-OH-XGL" secondAttribute="trailing" id="HBL-QX-Wm9"/>
                             <constraint firstItem="cwM-0q-a23" firstAttribute="leading" secondItem="M4q-wt-ft7" secondAttribute="trailing" constant="64" id="HbC-0L-PXH"/>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="trailing" secondItem="0ii-j8-IEv" secondAttribute="trailing" id="N0X-Mb-bAS"/>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="trailing" secondItem="hxo-Xj-SNZ" secondAttribute="trailing" id="OI5-QN-eVx"/>
-                            <constraint firstItem="Z6b-OH-XGL" firstAttribute="leading" secondItem="aPa-Or-OBu" secondAttribute="leading" id="RN2-9L-0ux"/>
+                            <constraint firstItem="Z6b-OH-XGL" firstAttribute="leading" secondItem="aPa-Or-OBu" secondAttribute="leading" constant="20" id="RN2-9L-0ux"/>
                             <constraint firstItem="d5f-ow-yuI" firstAttribute="leading" secondItem="aPa-Or-OBu" secondAttribute="leading" id="SAp-Bw-7X4"/>
                             <constraint firstItem="Y6x-Tq-Amx" firstAttribute="top" secondItem="mC4-4C-NND" secondAttribute="bottom" id="UXT-01-F8U"/>
                             <constraint firstItem="0ii-j8-IEv" firstAttribute="top" secondItem="Z6b-OH-XGL" secondAttribute="bottom" constant="1" id="WFa-UB-80o"/>
@@ -445,7 +445,7 @@ camera access.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YVk-Og-580" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="156.8603515625" y="-12.359619140625"/>
+            <point key="canvasLocation" x="156.25" y="-12.890625"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="asv-N6-sxR">
@@ -597,7 +597,7 @@ camera access.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="BuyLuxi" width="768" height="150"/>
+        <image name="BuyLuxi" width="334" height="130"/>
         <image name="DefaultBtn" width="230" height="90"/>
         <image name="HoldBtn_DN" width="768" height="100"/>
         <image name="HoldBtn_UP" width="768" height="100"/>

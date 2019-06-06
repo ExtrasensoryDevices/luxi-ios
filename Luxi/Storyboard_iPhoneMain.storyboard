@@ -32,7 +32,8 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6b-OH-XGL" userLabel="Button - buyLuxiBtn">
-                                <rect key="frame" x="0.0" y="25" width="260" height="100"/>
+                                <rect key="frame" x="11" y="15" width="128.5" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="c23-FP-evz"/>
                                 </constraints>
@@ -624,29 +625,30 @@ camera access.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="d5f-ow-yuI" firstAttribute="leading" secondItem="Z6b-OH-XGL" secondAttribute="trailing" constant="-7" id="15C-0W-JU9"/>
                             <constraint firstItem="R8H-1B-BXC" firstAttribute="top" secondItem="6zB-Qi-Hhe" secondAttribute="top" constant="14" id="9i7-a6-LSI"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="bottom" secondItem="wQf-os-fSl" secondAttribute="bottom" id="C5g-YM-GXI"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="R8H-1B-BXC" secondAttribute="trailing" constant="16" id="CwI-Sy-I4k"/>
                             <constraint firstItem="342-hf-855" firstAttribute="top" secondItem="mC4-4C-NND" secondAttribute="bottom" id="DAY-1k-wGd"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="2qw-81-sze" secondAttribute="trailing" id="DCd-lN-b4c"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="Z6b-OH-XGL" secondAttribute="trailing" id="HBL-QX-Wm9"/>
+                            <constraint firstItem="Z6b-OH-XGL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="IVa-gc-TAv"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="0ii-j8-IEv" secondAttribute="trailing" id="IfM-oP-5B9"/>
                             <constraint firstItem="DRa-qN-YST" firstAttribute="top" secondItem="R8H-1B-BXC" secondAttribute="top" constant="7" id="JuJ-Fm-R34"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="hxo-Xj-SNZ" secondAttribute="trailing" id="OI5-QN-eVx"/>
                             <constraint firstItem="342-hf-855" firstAttribute="top" secondItem="0ii-j8-IEv" secondAttribute="bottom" constant="74" id="OTG-Um-lwW"/>
-                            <constraint firstItem="Z6b-OH-XGL" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="RN2-9L-0ux"/>
                             <constraint firstItem="d5f-ow-yuI" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" constant="235" id="SAp-Bw-7X4"/>
                             <constraint firstItem="0ii-j8-IEv" firstAttribute="top" secondItem="d5f-ow-yuI" secondAttribute="bottom" constant="10" id="TAO-57-fVQ"/>
                             <constraint firstItem="mC4-4C-NND" firstAttribute="top" secondItem="0ii-j8-IEv" secondAttribute="bottom" id="WFl-Il-dqs"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="bottom" secondItem="2qw-81-sze" secondAttribute="bottom" constant="-260" id="Zan-qx-ueg"/>
                             <constraint firstItem="wQf-os-fSl" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="atg-iY-0fj"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="wQf-os-fSl" secondAttribute="trailing" id="bSd-5K-9mK"/>
-                            <constraint firstItem="hxo-Xj-SNZ" firstAttribute="top" secondItem="Z6b-OH-XGL" secondAttribute="bottom" constant="-5" id="l6l-l1-wa4"/>
+                            <constraint firstItem="hxo-Xj-SNZ" firstAttribute="top" secondItem="Z6b-OH-XGL" secondAttribute="bottom" constant="5" id="l6l-l1-wa4"/>
                             <constraint firstItem="mC4-4C-NND" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="lST-xo-VPW"/>
                             <constraint firstItem="R8H-1B-BXC" firstAttribute="leading" secondItem="DRa-qN-YST" secondAttribute="trailing" constant="7" id="lUS-HP-5EP"/>
                             <constraint firstItem="2qw-81-sze" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="nZ8-QI-ibc"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="342-hf-855" secondAttribute="trailing" id="oiy-Q3-Cv3"/>
-                            <constraint firstItem="Z6b-OH-XGL" firstAttribute="top" secondItem="6zB-Qi-Hhe" secondAttribute="top" constant="5" id="pGk-su-yFb"/>
+                            <constraint firstItem="Z6b-OH-XGL" firstAttribute="top" secondItem="6zB-Qi-Hhe" secondAttribute="top" constant="-5" id="pGk-su-yFb"/>
                             <constraint firstItem="342-hf-855" firstAttribute="leading" secondItem="6zB-Qi-Hhe" secondAttribute="leading" id="qGt-T2-QiO"/>
                             <constraint firstItem="d5f-ow-yuI" firstAttribute="top" secondItem="6zB-Qi-Hhe" secondAttribute="top" constant="5" id="qaZ-ie-mcJ"/>
                             <constraint firstItem="mC4-4C-NND" firstAttribute="top" secondItem="hxo-Xj-SNZ" secondAttribute="bottom" id="ryz-yP-g4C"/>
@@ -857,7 +859,7 @@ camera access.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="BuyLuxi" width="260" height="100"/>
+        <image name="BuyLuxi" width="128.5" height="72"/>
         <image name="DefaultBtn" width="115" height="45"/>
         <image name="HoldBtn_DN" width="320" height="100"/>
         <image name="HoldBtn_UP" width="320" height="100"/>

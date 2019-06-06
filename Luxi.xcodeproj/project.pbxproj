@@ -31,7 +31,6 @@
 		CC17EC0617B2FFA700C779F0 /* WebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC17EC0517B2FFA700C779F0 /* WebBrowserViewController.m */; };
 		CCE42808178B7C3A00CB3537 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE42807178B7C3A00CB3537 /* UIKit.framework */; };
 		CCE4280A178B7C3A00CB3537 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE42809178B7C3A00CB3537 /* Foundation.framework */; };
-		CCE42812178B7C3A00CB3537 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCE42810178B7C3A00CB3537 /* InfoPlist.strings */; };
 		CCE42814178B7C3A00CB3537 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42813178B7C3A00CB3537 /* main.m */; };
 		CCE42818178B7C3A00CB3537 /* LuxiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42817178B7C3A00CB3537 /* LuxiAppDelegate.m */; };
 		CCE4282B178B9CF800CB3537 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE4282A178B9CF800CB3537 /* AVFoundation.framework */; };
@@ -76,7 +75,6 @@
 		CCE42809178B7C3A00CB3537 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CCE4280B178B7C3A00CB3537 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CCE4280F178B7C3A00CB3537 /* Luxi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Luxi-Info.plist"; sourceTree = "<group>"; };
-		CCE42811178B7C3A00CB3537 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CCE42813178B7C3A00CB3537 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCE42815178B7C3A00CB3537 /* Luxi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Luxi-Prefix.pch"; sourceTree = "<group>"; };
 		CCE42816178B7C3A00CB3537 /* LuxiAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LuxiAppDelegate.h; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 			children = (
 				C77A31C2229669FE006B742B /* Segan-Light.ttf */,
 				CCE4280F178B7C3A00CB3537 /* Luxi-Info.plist */,
-				CCE42810178B7C3A00CB3537 /* InfoPlist.strings */,
 				CCE42813178B7C3A00CB3537 /* main.m */,
 				CCE42815178B7C3A00CB3537 /* Luxi-Prefix.pch */,
 			);
@@ -280,7 +277,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCE42812178B7C3A00CB3537 /* InfoPlist.strings in Resources */,
 				C77C6ACF1A37D309009B4358 /* HoldButtonView.xib in Resources */,
 				C77A31C3229669FE006B742B /* Segan-Light.ttf in Resources */,
 				C772372317F0F3AD00003658 /* Images.xcassets in Resources */,
@@ -314,17 +310,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CCE42810178B7C3A00CB3537 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CCE42811178B7C3A00CB3537 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CCE42825178B7C3A00CB3537 /* Debug */ = {
