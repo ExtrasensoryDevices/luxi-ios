@@ -131,9 +131,10 @@ static NSString *SwitchCellNibName = @"SwitchCell";
             [_footer setBackgroundColor:[UIColor clearColor]];
             
             NSString *shortVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
-            NSString *buildVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+//            NSString *buildVersionString = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
+//            NSString *text = [NSString stringWithFormat:@"Version %@ (%@)", shortVersionString, buildVersionString];
             
-            NSString *text = [NSString stringWithFormat:@"Version %@ (%@)",shortVersionString, buildVersionString];
+            NSString *text = [NSString stringWithFormat:@"Version %@", shortVersionString];
             text = [text stringByAppendingFormat:@"\nhttps://www.luxiforall.com"];
             [_footer setText:text];
         }
