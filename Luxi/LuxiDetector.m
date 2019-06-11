@@ -106,7 +106,7 @@
     
     
     
-    float threshold = 0.10;
+    float threshold = 0.18;
 //    NSLog(@"\n----------------------------------------------------\n");
 //    NSLog(@"(%.2f,  %.2f,  %.2f)", redDerivation, greenDerivation, blueDerivation);
     
