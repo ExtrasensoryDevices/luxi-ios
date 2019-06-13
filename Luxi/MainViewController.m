@@ -114,6 +114,7 @@ enum Lockable{
 @property (weak, nonatomic) IBOutlet UILabel  *helpLabel;
 @property (weak, nonatomic) IBOutlet UIButton *settingsBtn;
 @property (weak, nonatomic) IBOutlet UIButton *holdBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *holdButtonHeightConstraint;
 
 - (IBAction)holdBtnPressed:(id)sender;
 
@@ -431,6 +432,13 @@ BOOL _initialized = false;
     [self.permissionLabel setHidden: YES];
     
     [self setupHelpButton];
+    
+    CGFloat bottomInset = 0;
+    if (@available(iOS 11.0, *)) {
+        bottomInset = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom;
+    }
+    [self.holdButtonHeightConstraint setConstant: 100+bottomInset];
+    
 }
 
 -(void)setupHelpButton {

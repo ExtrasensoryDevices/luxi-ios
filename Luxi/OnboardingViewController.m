@@ -39,23 +39,25 @@
     
     
     switch (ScreenSizeClass.phoneSize) {
+        case ScreenSizePhone3_5inch:
         case ScreenSizePhone4inch:
         case ScreenSizeIPad:
+        case ScreenSizePhone5_5inch:
             _pageImages = @[@"Onboarding_1", @"Onboarding_2"]; //5, 6+, 7+, 8+, iPad
             break;
             
-        case ScreenSizePhone5_5inch:
+        case ScreenSizePhone5_8inch: //X, XS
+            _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"];
+            break;
+        case ScreenSizePhone6_5inch: //XS Max, XR
             if (UIScreen.mainScreen.scale == 3) {
                 _pageImages = @[@"Onboarding_1", @"Onboarding_2"]; // xs max
             } else {
-                _pageImages = @[@"Onboarding_iPhoneXR_1", @"Onboarding_iPhoneXR_2"]; // xr, NOt OK, MOVE 20px down
+                _pageImages = @[@"Onboarding_iPhoneXR_1", @"Onboarding_iPhoneXR_2"]; // xr 
             }
             break;
-            
-        default:
-            //6, 7, 8, x, xs
-            //ScreenSizePhone4_7inch, ScreenSizePhone5_8inch, ScreenSizePhone6_5inch
-            _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"]; //6, 7, 8, x, xs
+        case ScreenSizePhone4_7inch:
+            _pageImages = @[@"Onboarding_iPhone6_1", @"Onboarding_iPhone6_2"]; //6, 7, 8
             break;
     }
     

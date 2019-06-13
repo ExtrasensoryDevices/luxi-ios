@@ -375,7 +375,7 @@ camera access.</string>
                             <constraint firstItem="0ii-j8-IEv" firstAttribute="leading" secondItem="aPa-Or-OBu" secondAttribute="leading" id="8WZ-sB-1h0"/>
                             <constraint firstItem="R8H-1B-BXC" firstAttribute="top" secondItem="aPa-Or-OBu" secondAttribute="top" constant="25" id="9i7-a6-LSI"/>
                             <constraint firstItem="9Xe-e0-hmz" firstAttribute="leading" secondItem="cwM-0q-a23" secondAttribute="trailing" constant="64" id="AVY-yJ-UDa"/>
-                            <constraint firstItem="aPa-Or-OBu" firstAttribute="bottom" secondItem="wQf-os-fSl" secondAttribute="bottom" id="C5g-YM-GXI"/>
+                            <constraint firstAttribute="bottom" secondItem="wQf-os-fSl" secondAttribute="bottom" id="C5g-YM-GXI"/>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="trailing" secondItem="R8H-1B-BXC" secondAttribute="trailing" constant="20" id="CwI-Sy-I4k"/>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="centerX" secondItem="cwM-0q-a23" secondAttribute="centerX" id="Cwc-AZ-pt4"/>
                             <constraint firstItem="aPa-Or-OBu" firstAttribute="trailing" secondItem="2qw-81-sze" secondAttribute="trailing" id="DCd-lN-b4c"/>
@@ -423,6 +423,7 @@ camera access.</string>
                         <outlet property="fstopView1" destination="M4q-wt-ft7" id="48i-RE-HgO"/>
                         <outlet property="helpLabel" destination="0us-HX-ToU" id="7qa-BY-nXL"/>
                         <outlet property="holdBtn" destination="wQf-os-fSl" id="g6P-qd-O94"/>
+                        <outlet property="holdButtonHeightConstraint" destination="EQ5-oZ-h6u" id="P9P-id-ZI6"/>
                         <outlet property="isoLbl1" destination="5A8-Kx-OKh" id="wt8-m7-dwl"/>
                         <outlet property="isoLockImg1" destination="sYJ-mB-PK9" id="YJp-hc-QFq"/>
                         <outlet property="isoView1" destination="9Xe-e0-hmz" id="MgK-N1-hpd"/>

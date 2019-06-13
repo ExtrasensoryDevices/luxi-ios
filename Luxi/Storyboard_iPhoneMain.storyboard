@@ -627,7 +627,7 @@ camera access.</string>
                         <constraints>
                             <constraint firstItem="d5f-ow-yuI" firstAttribute="leading" secondItem="Z6b-OH-XGL" secondAttribute="trailing" constant="-7" id="15C-0W-JU9"/>
                             <constraint firstItem="R8H-1B-BXC" firstAttribute="top" secondItem="6zB-Qi-Hhe" secondAttribute="top" constant="14" id="9i7-a6-LSI"/>
-                            <constraint firstItem="6zB-Qi-Hhe" firstAttribute="bottom" secondItem="wQf-os-fSl" secondAttribute="bottom" id="C5g-YM-GXI"/>
+                            <constraint firstAttribute="bottom" secondItem="wQf-os-fSl" secondAttribute="bottom" id="C5g-YM-GXI"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="R8H-1B-BXC" secondAttribute="trailing" constant="16" id="CwI-Sy-I4k"/>
                             <constraint firstItem="342-hf-855" firstAttribute="top" secondItem="mC4-4C-NND" secondAttribute="bottom" id="DAY-1k-wGd"/>
                             <constraint firstItem="6zB-Qi-Hhe" firstAttribute="trailing" secondItem="2qw-81-sze" secondAttribute="trailing" id="DCd-lN-b4c"/>
@@ -681,6 +681,7 @@ camera access.</string>
                         <outlet property="fstopView1" destination="M4q-wt-ft7" id="48i-RE-HgO"/>
                         <outlet property="helpLabel" destination="DRa-qN-YST" id="afA-RB-Ua5"/>
                         <outlet property="holdBtn" destination="wQf-os-fSl" id="g6P-qd-O94"/>
+                        <outlet property="holdButtonHeightConstraint" destination="EQ5-oZ-h6u" id="Lrn-P1-nTP"/>
                         <outlet property="isoLbl1" destination="5A8-Kx-OKh" id="wt8-m7-dwl"/>
                         <outlet property="isoLockImg1" destination="sYJ-mB-PK9" id="YJp-hc-QFq"/>
                         <outlet property="isoView1" destination="9Xe-e0-hmz" id="MgK-N1-hpd"/>
